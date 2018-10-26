@@ -7,179 +7,23 @@
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:500" rel="stylesheet">
 	<script src="./js/jq.js"></script>
 	<script src="./js/jq-ui.js"></script>
+	<script src="./js/script.js"></script>
 	<link rel="stylesheet" href="./css/reset.css">
-	<style>
-		body{font-family: 'Noto Sans KR', sans-serif;}
-
-		#banner{position: relative;}
-		#banner img{margin: 0 auto;}
-		#banner01{background: #563b64;}
-		#banner02{background: #1E1E1E;}
-
-		/*#X{width: 30px; position: absolute; top: 20px; right: 30px; cursor:pointer;}*/
-
-
-		.content{width: 100%; padding-top: 100px;}
-
-		#content01{/*background: plum;*/}
-		.img{margin: 0 auto; opacity:0; position: relative;}
-		#img01{background: #cdc8f1;}
-		#img02{background: #fed5d9;}
-		#img03{background: #f3cebe;}
-		#img04{background: #fef3d5;}
-		.imgL{left: -50px;}
-		.imgR{right: -50px;}
-
-
-		/*#content02.relative{position: relative;}*/
-
-		#menu_wrap{width: 100%; background: black; z-index:10;}
-		#menu_wrap.absolute{position: absolute;}
-		#menu_wrap.fixed{position: fixed; top: 0;}
-
-		#menu{width: 1100px; margin: 0 auto; height: 100px;}
-		#menu:after{content:""; display: block; clear: both;}
-
-		#logo{padding-top:15px; display:inline-block; cursor:pointer;}
-
-		#top_menu{float: right; padding-top: 35px;}
-		#top_menu:after{content:""; display: block; clear: both;}
-		#top_menu li{float: left; padding-left: 30px;}
-		#top_menu li a{display: block; color:white; font-size:18px; padding-bottom: 5px;}
-		#top_menu li a:hover{border-bottom: 3px solid #fff;}
-
-		#side_bar{right: 50px; z-index:9; position: absolute; transition:0.7s;}
-		#side_bar img:nth-child(2){padding-bottom: 10px;}
-		#TOP{background:url(./images/top.png); height: 100px; text-align: center; background-size:100px 100px;  text-indent:-9999px; cursor:pointer;}
-
-		#slide_wrap{width: 1530px; height: 650px; margin: 0 auto; padding: 50px 0; text-align: center; position: relative; overflow: hidden;}
-		#slide_wrap p{font-size:50px; padding-bottom:100px;}
-		#slide{}
-		#slide ul{padding-left: 5px; width: 4595px; position: absolute;}
-		#slide ul:after{content:""; display: block; clear: both;}
-		#slide ul li{float: left; font-size:20px;}
-		#slide ul li img{padding-bottom: 10px;}
-		
-		#prev,#next{position: absolute; top: 50%; padding-top: 20px; cursor:pointer; z-index:8;}
-		#prev{left: 0;}
-		#next{right: 0;}
-
-		#banner03 img{margin: 0 auto; padding-top: 100px;}
-
-
-		footer{background: #333333;}
-		footer img{margin: 0 auto; padding: 50px 0;}
-	</style>
-	<script>
-		$(function(){
-
-			var menuPOS = $('#menu').offset().top;
-			var prev = $('#prev>img');
-			var next = $('#next>img');
-			var count = 0;
-
-			// $('#X').click(function(){
-			// 	$('#banner01').slideUp(1000);
-			// });
-
-			$(window).on('scroll',function(){
-				var POS = window.pageYOffset;
-				var scrollPOS = $(window).scrollTop() + 150;
-				console.log(POS);
-
-				if(POS >= menuPOS){
-					$('#menu_wrap').removeClass('absolute').addClass('fixed');
-					// $('#side_bar').removeClass('absolute').addClass('fixed')
-					$('#side_bar').animate({top:scrollPOS + 'px'},1);
-				}else{
-					$('#menu_wrap').removeClass('fixed').addClass('absolute');
-					// $('#side_bar').removeClass('fixed').addClass('absolute');
-					$('#side_bar').animate({top:menuPOS + 150 + 'px'},1);	
-				}
-
-				$('.img').each(function(){
-					if(POS >= $(this).offset().top - 800){
-						if($(this).attr('class') == 'img imgL'){
-							$(this).stop().animate({
-								opacity:1,
-								left:0
-							},2000,'easeOutQuad');
-						}else if($(this).attr('class') == 'img imgR'){
-							$(this).stop().animate({
-								opacity:1,
-								right:0
-							},2000,'easeOutQuad');
-						}
-					}
-				});
-			});
-
-			function slideMove(){
-				$('#slide>ul').stop().animate({left:-1530*count},1500,'easeInOutQuart');
-			}
-
-			prev.on({
-				mouseover:function(){
-					$(this).attr('src','./images/btn_mainslide_prev_active.png');
-				},
-				mouseout:function(){
-					$(this).attr('src','./images/btn_mainslide_prev.png');
-				},
-				click:function(){
-					if(count>-1){
-						count--;
-						slideMove();
-
-						if(count == -1){
-							count = 2;
-							slideMove();
-						}
-
-					}
-				}
-			})
-
-			next.on({
-				mouseover:function(){
-					$(this).attr('src','./images/btn_mainslide_next_active.png');
-				},
-				mouseout:function(){
-					$(this).attr('src','./images/btn_mainslide_next.png');
-				},
-				click:function(){
-					if(count<3){
-						count++;
-						slideMove();
-
-						if(count == 3){
-							count = 0;
-							slideMove();
-						}
-
-					}
-				}
-			})
-
-			$('#TOP').click(function(){
-				$('html,body').stop().animate({scrollTop:0},1000,'easeInOutQuart');
-			});
-
-		});
-	</script>
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 	<header>
 		<div id="banner">
 			<div id="banner01">
-				<!-- <img src="./images/x.png" alt="X" id="X"> -->
-				<img src="./images/banner01.jpg" alt="banner01">
+				<img src="./images/x.png" alt="X" id="X">
+				<img src="./images/tbanner0.png" alt="banner01">
 			</div>
 			<div id="banner02">
 				<img src="./images/banner02.png" alt="banner02">
 			</div>
 		</div>
 		<div id="menu_wrap" class="absolute">
-			<div id="menu">
+			<nav id="menu">
 				<h1 id="logo">
 					<img src="./images/logo.png" alt="logo">
 				</h1>
@@ -189,57 +33,72 @@
 					<li><a href="javascript:void(0)">상품소개</a></li>
 					<li><a href="javascript:void(0)">유심가입</a></li>
 				</ul>
-			</div>
+			</nav>
 		</div>
 	</header>
-	<section id="content02" class="content">
-		<div id="side_bar">
-			<img src="./images/img_wingnav_logo.png" alt="sideimg01">
-			<img src="./images/img_wingnav_video.png" alt="sideimg02">
-			<p id="TOP">TOP</p>
-		</div>
-		<div id="slide_wrap">
-			<p>이런 휴대폰 어떠세요?</p>
-			<div id="prev"><img src="./images/btn_mainslide_prev.png" alt="prev"></div>
-			<div id="slide">
-				<ul>
-					<li><img src="./images/001(1).jpg" alt="phoneimg01">Galaxy On7 Prime</li>
-					<li><img src="./images/001(2).jpg" alt="phoneimg02">Galaxy A5(2017) 32G</li>
-					<li><img src="./images/001(3).jpg" alt="phoneimg03">iPhone 8</li>
-					<li><img src="./images/001(4).jpg" alt="phoneimg04">LG G7 ThinQ 64GB</li>
-					<li><img src="./images/001(5).jpg" alt="phoneimg05">iPhone X 64G</li>
-					<li><img src="./images/001(6).jpg" alt="phoneimg06">LG X5</li>
-					<li><img src="./images/001(7).jpg" alt="phoneimg07">LG Q7</li>
-					<li><img src="./images/001(8).jpg" alt="phoneimg08">LG X2(2018)</li>
-					<li><img src="./images/001(9).jpg" alt="phoneimg09">LG V30 64G</li>
-					<li><img src="./images/001(10).jpg" alt="phoneimg010">LG Q8(2018)</li>
-					<li><img src="./images/001(11).jpg" alt="phoneimg011">Galaxy Note 9 128GB</li>
-					<li><img src="./images/001(12).jpg" alt="phoneimg012">Galaxy J7</li>
-					<li><img src="./images/001(13).jpg" alt="phoneimg013">Galaxy A8</li>
-					<li><img src="./images/001(14).jpg" alt="phoneimg014">Galaxy S8</li>
-					<li><img src="./images/001(15).jpg" alt="phoneimg015">Galaxy A7(2016)</li>
-				</ul>
+	<div id="content_wrap">
+		<section id="content02" class="content">
+			<div id="side_bar">
+				<img src="./images/img_wingnav_logo.png" alt="sideimg01">
+				<img src="./images/img_wingnav_video.png" alt="sideimg02">
+				<p id="TOP">TOP</p>
 			</div>
-			<div id="next"><img src="./images/btn_mainslide_next.png" alt="next"></div>
-		</div>
-		<div id="banner03">
-			<img src="./images/banner03.png" alt="banner03">
-		</div>
-	</section>
-	<section id="content01" class="content">
-		<div id="img01">
-			<img src="./images/01.jpg" alt="img01" class="img imgL">
-		</div>
-		<div id="img02">
-			<img src="./images/02.jpg" alt="img02" class="img imgR">
-		</div>
-		<div id="img03">
-			<img src="./images/03.jpg" alt="img03" class="img imgL">
-		</div>
-		<div id="img04">
-			<img src="./images/04.jpg" alt="img04" class="img imgR">
-		</div>
-	</section>
+			<div id="slide_wrap">
+				<div id="slide">
+					<div class="slideimg01"></div>
+					<div class="slideimg02"></div>
+					<div class="slideimg03"></div>
+					<div class="slideimg04"></div>
+					<div class="slideimg05"></div>
+				</div>
+				<div id="btn">
+					<div id="slide_prev"><img src="./images/btn_slide_prev_02.png" alt="slideprev"></div>
+					<div id="slide_next"><img src="./images/btn_slide_next_02.png" alt="slidenext"></div>
+				</div>
+			</div>
+			<div id="hslide_wrap">
+				<p>이런 휴대폰 어떠세요?</p>
+				<div id="hprev"><img src="./images/btn_mainslide_prev.png" alt="prev"></div>
+				<div id="hslide">
+					<ul>
+						<li><img src="./images/001(1).jpg" alt="phoneimg01">Galaxy On7 Prime</li>
+						<li><img src="./images/001(2).jpg" alt="phoneimg02">Galaxy A5(2017) 32G</li>
+						<li><img src="./images/001(3).jpg" alt="phoneimg03">iPhone 8</li>
+						<li><img src="./images/001(4).jpg" alt="phoneimg04">LG G7 ThinQ 64GB</li>
+						<li><img src="./images/001(5).jpg" alt="phoneimg05">iPhone X 64G</li>
+						<li><img src="./images/001(6).jpg" alt="phoneimg06">LG X5</li>
+						<li><img src="./images/001(7).jpg" alt="phoneimg07">LG Q7</li>
+						<li><img src="./images/001(8).jpg" alt="phoneimg08">LG X2(2018)</li>
+						<li><img src="./images/001(9).jpg" alt="phoneimg09">LG V30 64G</li>
+						<li><img src="./images/001(10).jpg" alt="phoneimg010">LG Q8(2018)</li>
+						<li><img src="./images/001(11).jpg" alt="phoneimg011">Galaxy Note 9 128GB</li>
+						<li><img src="./images/001(12).jpg" alt="phoneimg012">Galaxy J7</li>
+						<li><img src="./images/001(13).jpg" alt="phoneimg013">Galaxy A8</li>
+						<li><img src="./images/001(14).jpg" alt="phoneimg014">Galaxy S8</li>
+						<li><img src="./images/001(15).jpg" alt="phoneimg015">Galaxy A7(2016)</li>
+					</ul>
+				</div>
+				<div id="hnext"><img src="./images/btn_mainslide_next.png" alt="next"></div>
+			</div>
+			<div id="banner03">
+				<img src="./images/banner03.png" alt="banner03">
+			</div>
+		</section>
+		<section id="content01" class="content">
+			<div id="img01">
+				<img src="./images/01.jpg" alt="img01" class="img imgL">
+			</div>
+			<div id="img02">
+				<img src="./images/02.jpg" alt="img02" class="img imgR">
+			</div>
+			<div id="img03">
+				<img src="./images/03.jpg" alt="img03" class="img imgL">
+			</div>
+			<div id="img04">
+				<img src="./images/04.jpg" alt="img04" class="img imgR">
+			</div>
+		</section>
+	</div>
 	<footer>
 		<img src="./images/footer.png" alt="footer">
 	</footer>
