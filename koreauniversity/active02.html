@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>한국대학교</title>
+	<link rel="stylesheet" href="./css/jquery.bxslider.css">
+	<script src="./js/jquery-3.3.1.min.js"></script>
+	<script src="./js/jquery.bxslider.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.slider01').bxSlider({
+				auto:true,
+			});
+			$('.slider02').bxSlider({
+				auto:true,
+				controls:false
+			});
+			var myslider = $('.slider03').bxSlider({
+				mode:'vertical',
+				pager:false,
+				controls:false,
+				auto:true
+			});
+			$('.prevbtn').click(function(){
+				myslider.goToPrevSlide();
+			});
+			$('.nextbtn').click(function(){
+				myslider.goToNextSlide();
+			});
+		});
+	</script>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<header id="main_header">
+		<div id="main_gnb_wrap">
+			<nav id="main_gnb" class="clearfix">
+				<ul class="gnb01 clearfix">
+					<li><a href="./index.html">대학교</a></li>
+					<li><a href="./active01.html">입학안내</a></li>
+					<li><a href="./active02.html" class="active">대학원</a></li>
+				</ul>
+				<div class="gnb02 clearfix">
+					<ul class="fontsize clearfix">
+						<li class="font">글자크기</li>
+						<li>
+						<img src="./images/fontsize-.png" alt="fontsizeminus">
+						</li>
+						<li>
+						<img src="./images/fontsize+.png" alt="fontsizeplus">
+						</li>
+					</ul>
+					<ul class="gnb clearfix">
+						<li><a href="#">찾아오시는길</a></li>
+						<li><a href="#">ENGLISH</a></li>
+						<li><a href="#">사이트맵</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div id="main_lnb_wrap" class="clearfix">
+			<div id="logo">
+				<img src="./images/logo.png" alt="logo">
+			</div>
+			<nav id="lnb_wrap">
+				<ul class="lnb clearfix">
+					<li><a href="#">대학소개</a></li>
+					<li><a href="#">학과소개</a></li>
+					<li><a href="#">학사안내</a></li>
+					<li><a href="#">대학생활</a></li>
+					<li><a href="#">학생지원센터</a></li>
+					<li><img src="./images/button01.png" alt=""></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div id="content_wrapper">
+		<div id="content">
+			<div id="visual_wrap">
+				<div class="visual">
+					<p>함께 나누며 세상을 이끌어</p>
+					<h1>세계로향하는 한국대학교</h1>
+				</div>
+				<div id="menuguman_wrap">
+					<ul class="menuguman clearfix">
+						<li><a href="#">
+							<img src="./images/icon01.png" alt="" class="icon">입학절차안내</a>
+						</li>
+						<li><a href="#">
+							<img src="./images/icon02.png" alt="" class="icon">입학설명회</a>
+						</li>
+						<li><a href="#">
+							<img src="./images/icon03.png" alt="" class="icon">장학제도</a>
+						</li>
+						<li><a href="#">
+							<img src="./images/icon04.png" alt="" class="icon">증명서발급</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span_9 one9">
+					<div class="slider01">
+						<div>
+							<p>
+								<b>한국</b>에서<br><b>시작</b>하는<br>새로운 <b>꿈</b>
+							</p>
+							<div class="detail nemo01">
+								자세히 보기 ▶
+							</div>
+							<img src="./images/부품/배경02.jpg" alt="">
+						</div>
+						<div><img src="./images/book01.jpg" alt=""></div>
+						<div><img src="./images/nobook.jpg" alt=""></div>
+						<div><img src="./images/book04.jpg" alt=""></div>
+					</div>
+				</div>
+				<div class="span_3 content01">
+					<p class="app">
+						<b>APP</b>으로<br><b>스마트 도서관</b><br>바로이용하자!
+					</p>
+					<br>
+					<p class="mobile">
+						모바일 열람증은<br>도서관 자료실/도서대출 등에<br>사용할 수 있습니다.
+					</p>
+					<div class="detail nemo02">
+						자세히 보기 ▶
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span_3 content02">
+					<p class="title">HOT LINK</p>
+					<div class="ct02-icon clearfix">
+						<div>
+							<img src="./images/icon05.png" alt="" class="icons">
+							<p>국제교류<br>센터</p>
+						</div>
+						<div>
+							<img src="./images/icon06.png" alt="" class="icons">
+							<p>원격지원<br>시스템</p>
+						</div>
+						<div>
+							<img src="./images/icon07.png" alt="" class="icons">
+							<p>예산 / 결산<br>공고</p>
+						</div>
+					</div>
+				</div>
+				<div class="span_3 content03">
+					<p class="title">공지사항</p>
+					<ul class="clearfix">
+						<li class="subject">[공지] 한국대학교 웹진 어쩌구</li>
+						<li class="date">2018-08-21</li>
+						<li class="subject">[보도] 우수대학교 선정 수상</li>
+						<li class="date">2018-08-20</li>
+						<li class="subject">[공지] 대학입시 설명회</li>
+						<li class="date">2018-08-16</li>
+						<li class="subject">[공지] 2018년 1학기 성적 어쩌구</li>
+						<li class="date">2018-08-01</li>
+					</ul>
+				</div>
+				<div class="span_3 content04">
+					<p class="title">SNS NEWS</p>
+					<div class="clearfix">
+						<img src="./images/부품/학교01.jpg" alt="">
+						<p>
+							한국 대학교는<br>2019학년도 신입생<br>입학실을 3월 2일(목)<br>본교 종합체육관 저쩌구
+						</p>
+						<div class="ct04-icon clearfix">
+							<img src="./images/facebook.png" alt="">
+							<img src="./images/twitter.png" alt="">
+							<img src="./images/googleplus.png" alt="">
+							<img src="./images/youtube.png" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="span_3 content05">
+					<img src="./images/부품/학교02.jpg" alt="">
+					<div>
+						<p>캠퍼스 투어</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span_3 content06">
+					<div class="play">
+						<img src="./images/nosamgak.png" alt="">
+					</div>
+				</div>
+				<div class="span_9 two9">
+					<div class="slider02">
+						<div>
+							<p>
+								2018년 신 · 편입생 2차 모집<br><b>2018.9.1 ~ 9.10</b>
+							</p>
+							<div class="detail nemo03">
+								입학사전예약 ▶
+							</div>
+							<img src="./images/부품/도서관01.jpg" alt="">
+						</div>
+						<div><img src="./images/book02.jpg" alt=""></div>
+						<div><img src="./images/book03.jpg" alt=""></div>
+						<div><img src="./images/book05.jpg" alt=""></div>
+					</div>
+				</div>
+			</div>
+			<div class="row bottom">
+				<div class="span_3">
+					<div class="haksa clearfix">
+						<p class="haksa01">학사일정</p>
+						<p class="haksa02">
+							<span>＜</span>2018 08<span>＞</span>
+						</p>
+					</div>
+				</div>
+				<div class="span_9 thr9">
+					<div class="slider03">
+						<div class="clearfix">
+							<p class="text01">2018 - 1학기 성적 열람 및 상담 신청</p>
+							<p class="text02">성적열람및 상담신청은 본인이 수강한 교과목 설문조사를 모두 마친 후 확인이 가능합니다.</p>
+						</div>
+						<div class="clearfix">
+							<p class="text01">2018 - 2학기 수강 및 상담 신청</p>
+							<p class="text02">강의실 및 강의시간은 변경될 수 있으니 수업 전 홈페이지에서 반드시 최종 점검하여 주시기 바랍니다.</p>
+						</div>
+						<div class="clearfix">
+							<p class="text01">2018 - 계절학기 성적 열람 및 상담 신청</p>
+							<p class="text02">학기가 끝이 없다 집에 가고 싶다</p>
+						</div>
+					</div>
+					<div class="prevbtn">
+						<img src="./images/haksatop.png" alt="">
+					</div>
+					<div class="nextbtn">
+						<img src="./images/haksabt.png" alt="" class="nextbtn">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="row">
+			<div class="span_3">
+				<div id="logo">
+				<img src="./images/logo.png" alt="logo">
+				</div>
+			</div>
+			<div class="span_9">
+				<div class="bt_ps">
+					<p class="bt_p01">
+						<span>회사소개</span>
+						<span>한국 대학교</span>
+						<span>개인정보취급방침</span>
+						<span>이용정책</span>
+						<span>입점/제휴문의 및 광고</span>
+						<span>이메일 무단수집거부</span>
+					</p>
+					<p class="bt_p02">대표자: 홍길동　서울특별시 구로구 구로로 300 (구로동 6가)　사업자등록번호: 123-56-7890123<br>통신판매업 신고번호: 제1234-서울 구로구-1004호　개인정보관리 책임자: 홍길동　소비자피해보상보험<br>고객센터: 1234-5678　FAX: 02-1234-5678　HANGUKUNIVERSITY@HANGUK.COM</p>
+					<address>COPYRIGHTⓒHANGUK. ALL RIGHTS RESERVED.</address>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
