@@ -6,6 +6,22 @@
 	<title>바이미디어</title>
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/jq.js"></script>
+	<script>
+		$(function(){
+			var lnbA = $('#lnb>ul>li>a')
+
+			$('.sub').hide();
+
+			$('#lnb>ul>li').hover(function(){
+				lnbA.eq($(this).index()).addClass('lnbhover');
+				$('.sub').eq($(this).index()).stop().slideDown();
+			},function(){
+				lnbA.eq($(this).index()).removeClass('lnbhover');
+				$('.sub').hide();
+			});
+		});
+	</script>
 </head>
 <body>
 	<header id="main_header">
@@ -31,12 +47,60 @@
 			<div id="main_lnb">
 				<nav id="lnb">
 					<ul class="clearfix">
-						<li><a href="#">회사소개</a></li>
-						<li><a href="#">제품소개</a></li>
-						<li><a href="#">사업영역</a></li>
-						<li><a href="#">고객센터</a></li>
-						<li><a href="#">사회공헌</a></li>
-						<li><a href="#">인재채용</a></li>
+						<li><a href="#">회사소개</a>
+							<ul class="sub">
+								<li><a href="#">menu01</a></li>
+								<li><a href="#">menu02</a></li>
+								<li><a href="#">menu03</a></li>
+								<li><a href="#">menu04</a></li>
+								<li><a href="#">menu05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">제품소개</a>
+							<ul class="sub">
+								<li><a href="#">menu01</a></li>
+								<li><a href="#">menu02</a></li>
+								<li><a href="#">menu03</a></li>
+								<li><a href="#">menu04</a></li>
+								<li><a href="#">menu05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">사업영역</a>
+						<ul class="sub">
+								<li><a href="#">menu01</a></li>
+								<li><a href="#">menu02</a></li>
+								<li><a href="#">menu03</a></li>
+								<li><a href="#">menu04</a></li>
+								<li><a href="#">menu05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">고객센터</a>
+						<ul class="sub">
+								<li><a href="#">menu01</a></li>
+								<li><a href="#">menu02</a></li>
+								<li><a href="#">menu03</a></li>
+								<li><a href="#">menu04</a></li>
+								<li><a href="#">menu05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">사회공헌</a>
+						<ul class="sub">
+								<li><a href="#">menu01</a></li>
+								<li><a href="#">menu02</a></li>
+								<li><a href="#">menu03</a></li>
+								<li><a href="#">menu04</a></li>
+								<li><a href="#">menu05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">인재채용</a>
+						<ul class="sub">
+								<li><a href="#">menu01</a></li>
+								<li><a href="#">menu02</a></li>
+								<li><a href="#">menu03</a></li>
+								<li><a href="#">menu04</a></li>
+								<li><a href="#">menu05</a></li>
+							</ul>
+						</li>
 					</ul>
 				</nav>
 			</div>

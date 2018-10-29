@@ -49,7 +49,7 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 
 
 /*메인 슬라이드*/
-#slide_wrap{width: 100%; overflow: hidden; height: 550px;}
+#slide_wrap{width: 100%; overflow: hidden; height: 550px; position: relative;}
 #slide_wrap:after{content:""; display: block; clear: both;}
 #slide{width: 10000px; position: relative;}
 #slide>div{width: 2000px; height: 600px; float: left;}
@@ -59,7 +59,7 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 .slideimg04{background: url(../images/slide04.jpg) 50% 0px no-repeat;}
 .slideimg05{background: url(../images/slide05.jpg) 50% 0px no-repeat;}
 
-#btn{width: 1300px; height: 100%; margin: 0 auto; position: relative;}
+#btn{max-width: 1300px; height: 100%; margin: 0 auto; position: relative;}
 #slide_prev,#slide_next{position: absolute; top: 48%; cursor:pointer;}
 #slide_prev{left: 0}
 #slide_next{right: 0}

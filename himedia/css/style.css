@@ -33,11 +33,17 @@
 
 #lnb{}
 #lnb>ul{height: 100%;}
-#lnb li{float: left; width:16.66%; text-align: center;
-	border-right: 1px solid #336eac;}
-#lnb li:first-child{border-left:1px solid #336eac;}
-#lnb a{display: block; line-height: 40px; color:white;}
-#lnb a:hover{background:white; color:#1c5da3; font-weight:bold;}
+#lnb>ul>li{float: left; width:16.66%; text-align: center;
+	border-right: 1px solid #336eac; position: relative;}
+#lnb>ul>li:first-child{border-left:1px solid #336eac;}
+#lnb>ul>li>a{display: block; line-height: 40px; color:white;}
+.lnbhover{background: white; font-weight: bold; color:#1c5da3 !important;}
+
+.sub{width: 100%; position: absolute; z-index:10; 
+	background: #336eac;}
+.sub>li>a{display: block; width: 100%; margin: 0 auto; line-height: 50px; 
+	color:white;}
+.sub>li>a:hover{background: white; font-weight: bold; color:#1c5da3 !important;}
 /*main_lnb*/
 
 /*visual*/
