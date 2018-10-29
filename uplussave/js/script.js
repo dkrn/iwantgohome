@@ -11,7 +11,7 @@ $(function(){
 	var count = 0;
 	var hcount = 0;
 
-	function slideResize(){
+	function siteResize(){
 		$('#slide>div').css('width',widthSize);
 		$('#slide').css('width',widthSize*5);
 	}
@@ -22,7 +22,7 @@ $(function(){
 		},5000);
 	}
 
-	slideResize();
+	siteResize();
 	timer();
 
 	$('#slide_wrap').on({
@@ -34,7 +34,7 @@ $(function(){
 		widthSize = window.outerWidth;
 		console.log(widthSize);
 
-		slideResize();
+		siteResize();
 		$('#slide').stop().animate({left:widthSize*count*-1},1);
 	});
 
