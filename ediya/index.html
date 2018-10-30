@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>EDIYA COFFEE</title>
+	<link rel="stylesheet" href="./css/reset.css">
+	<script src="./js/jq.js"></script>
+	<style>
+		body{background: #ccc;}
+
+		#header_wrap{width: 100%;}
+		
+		header{width: 100%;}
+		header:after{content:""; display: block; clear: both;}
+
+		#gnb_wrap{width: 1200px; margin: 0 auto; height: 100px; background: #000;}
+
+		#menu_wrap{width: 100%; background: #fff;}
+		.menu_wrap{width: 1200px; margin: 0 auto; height: 50px;}
+
+		#logo,#menu{float: left;}
+		#logo{height: 50px;}
+		#logo>img{width: 200px; display:inline-block; line-height: 50px; cursor:pointer;}
+
+		#menu{float: right; width: 950px;}
+		#menu>ul{}
+		#menu>ul:after{content:""; display: block; clear: both;}
+		#menu>ul>li{float: left; width: 20%;}
+		#menu>ul>li>a{display: block; text-align: center; line-height: 50px; box-sizing:border-box; height: 50px; min-width:45px;}
+		#menu>ul>li>a>span{padding-bottom: 10px;}
+ 
+		.sub{padding: 15px 0;}
+		.sub>li{width: 100%;}
+		.sub>li>a{display: block; text-align: center; line-height: 35px; color:#888; font-size:15px;}
+	</style>
+	<script>
+		$(function(){
+			$('.sub').hide();
+
+			$('#menu').mouseenter(function(){
+				$('.sub').stop().slideDown(500);
+				$('.menu_wrap').stop().animate({height:255},500);
+				$('#header_wrap').css({
+					'border-bottom':'2px solid #333'
+				})
+			})
+
+			$('#menu_wrap').mouseleave(function(){
+				$('.sub').stop().slideUp(500);
+				$('.menu_wrap').stop().animate({height:50},500);
+				$('#menu_wrap').css({
+					'border-bottom':'none'
+				})
+			});
+
+			$('#menu>ul>li').hover(function(){
+				$('#menu>ul>li>a>span').eq($(this).index()).css({
+					'border-bottom':'4px solid #333'
+				})
+			},function(){
+				$('#menu>ul>li>a>span').eq($(this).index()).css({
+					'border-bottom':'none'
+				})
+			});
+
+			$('.sub>li>a').hover(function(){
+				$(this).css({
+					'font-weight':'bold',
+					color:'#333'
+				})
+			},function(){
+				$(this).css({
+					'font-weight':'normal',
+					color:'#888'
+				})
+			});
+
+		})
+	</script>
+</head>
+<body>
+	<header>
+		<div id="gnb_wrap">
+			ul#gnb>li>
+		</div>
+		<div id="menu_wrap">
+			<div class="menu_wrap">
+				<h1 id="logo">
+					<img src="./images/top_logo.gif" alt="logo">
+				</h1>
+				<nav id="menu">
+					<ul>
+						<li>
+							<a href="#"><span>메뉴</span></a>
+							<ul class="sub">
+								<li><a href="#">sub01</a></li>
+								<li><a href="#">sub02</a></li>
+								<li><a href="#">sub03</a></li>
+								<li><a href="#">sub04</a></li>
+								<li><a href="#">sub05</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#"><span>이디야멤버스</span></a>
+							<ul class="sub">
+								<li><a href="#">sub01</a></li>
+								<li><a href="#">sub02</a></li>
+								<li><a href="#">sub03</a></li>
+								<li><a href="#">sub04</a></li>
+								<li><a href="#">sub05</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#"><span>이디야커피랩</span></a>
+							<ul class="sub">
+								<li><a href="#">sub01</a></li>
+								<li><a href="#">sub02</a></li>
+								<li><a href="#">sub03</a></li>
+								<li><a href="#">sub04</a></li>
+								<li><a href="#">sub05</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#"><span>이디야컬쳐랩</span></a>
+							<ul class="sub">
+								<li><a href="#">sub01</a></li>
+								<li><a href="#">sub02</a></li>
+								<li><a href="#">sub03</a></li>
+								<li><a href="#">sub04</a></li>
+								<li><a href="#">sub05</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#"><span>공지사항</span></a>
+							<ul class="sub">
+								<li><a href="#">sub01</a></li>
+								<li><a href="#">sub02</a></li>
+								<li><a href="#">sub03</a></li>
+								<li><a href="#">sub04</a></li>
+								<li><a href="#">sub05</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+</body>
+</html>
