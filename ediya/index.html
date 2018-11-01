@@ -7,48 +7,137 @@
 	<link rel="stylesheet" href="./css/reset.css">
 	<script src="./js/jq.js"></script>
 	<style>
-		body{background: #ccc;}
+		body{background: #fff;}
+
+
 
 		#header_wrap{width: 100%;}
 		
-		header{width: 100%;}
+		header{width: 100%; position: relative;}
 		header:after{content:""; display: block; clear: both;}
 
 		#gnb_wrap{width: 1200px; margin: 0 auto; height: 100px; background: #000;}
 
-		#menu_wrap{width: 100%; background: #fff;}
-		.menu_wrap{width: 1200px; margin: 0 auto; height: 50px;}
+		#menu_wrap{width: 100%; background: #fff; position: absolute; z-index:10;}
+		.menu_wrap{width: 1200px; margin: 0 auto; height: 100%;}
 
 		#logo,#menu{float: left;}
-		#logo{height: 50px;}
-		#logo>img{width: 200px; display:inline-block; line-height: 50px; cursor:pointer;}
+		#logo{height: 20px; padding: 20px 0;}
+		#logo>img{width: 202px; height: 20px; cursor:pointer;}
 
 		#menu{float: right; width: 950px;}
 		#menu>ul{}
 		#menu>ul:after{content:""; display: block; clear: both;}
 		#menu>ul>li{float: left; width: 20%;}
-		#menu>ul>li>a{display: block; text-align: center; line-height: 50px; box-sizing:border-box; height: 50px; min-width:45px;}
+		#menu>ul>li>a{display: block; text-align: center; line-height: 60px; box-sizing:border-box; height: 60px; min-width:45px;}
 		#menu>ul>li>a>span{padding-bottom: 10px;}
  
-		.sub{padding: 15px 0;}
+		.sub{padding: 10px 0 15px;}
 		.sub>li{width: 100%;}
-		.sub>li>a{display: block; text-align: center; line-height: 35px; color:#888; font-size:15px;}
+		.sub>li>a{display: block; text-align: center; line-height: 35px; color:#888; font-size:14px;}
+
+
+
+		#contents{margin-top: 50px;}
+
+		#main_slide{max-width:100%; height: 620px; overflow: hidden; position: relative;}
+		#main_slide>ul{width: 5760px; position: relative;}
+		#main_slide>ul:after{content:""; display: block; clear: both;}
+		#main_slide>ul>li{width: 1920px; height: 620px; float: left;}
+		#main_slide>ul>li>a{}
+
+		.slideimg01{background: url(./images/1.jpg) 50% 0px no-repeat;}
+		.slideimg02{background: url(./images/2.jpg) 50% 0px no-repeat;}
+		.slideimg03{background: url(./images/3.jpg) 50% 0px no-repeat;}
+		.slideimg04{background: url(./images/4.jpg) 50% 0px no-repeat;}
+		.slideimg05{background: url(./images/5.jpg) 50% 0px no-repeat;}
+
+		#prev,#next{position: absolute; z-index:9; top: 50%; cursor:pointer; margin-top: -22px;}
+		#prev{left: 30px;}
+		#next{right: 30px;}
+
+		#O{position: absolute; z-index:9; bottom: 15px; width: 100%; text-align: center; color:white;}
+		#O>span{font-size:13px; padding-left: 3px; cursor:pointer;}
+
+
+		#section01{width: 500px; height: 500px; background: #ccc;}
 	</style>
 	<script>
 		$(function(){
+			var menuPOS = $('#menu_wrap').offset().top;
+			var slideLength = $('#main_slide>ul>li').length;
+			var count = 0;
+			var winWidth = window.outerWidth;
+			var slideInterval;
+
+
+
+			function slideMove(){
+				$('#main_slide>ul').stop().animate({
+					left:winWidth*count*-1
+				},800)
+				// $('#main_slide>ul').stop().css({
+				// 	transform:'translate3d('+winWidth*count*-1+'px, 0px, 0px)',
+				// 	'transition-duration':'1s'
+				// })
+				$('#O>span').removeAttr('style').eq(count).css({color:'#223C86'});
+			}
+
+			function slideResize(){
+				$('#main_slide>ul').css('width',winWidth*slideLength);
+				$('#main_slide>ul>li').css('width',winWidth);
+			}
+
+			function slideTimer(){
+				slideInterval = setInterval(function(){
+					$('#next').trigger('click');
+				},5000)
+			}
+
+			slideResize();
+			slideTimer();
+
+
+
+			$(window).on('scroll',function(){
+				var POS = window.pageYOffset;
+				console.log(POS);
+
+				if(POS >= menuPOS){
+					$('#menu_wrap').css({
+						position:'fixed',
+						top:0
+					})
+				}else{
+					$('#menu_wrap').removeAttr('style');
+				}
+			});
+
+			$(window).on('resize',function(){
+				winWidth = window.outerWidth;
+				console.log(outerWidth);
+
+				slideResize();
+				$('#main_slide>ul').stop().animate({left:winWidth*count*-1},1);
+			});
+
+
+
 			$('.sub').hide();
+
+			$('a').click(function(e){
+				e.preventDefault();
+			})
 
 			$('#menu').mouseenter(function(){
 				$('.sub').stop().slideDown(500);
-				$('.menu_wrap').stop().animate({height:255},500);
-				$('#header_wrap').css({
+				$('#menu_wrap').css({
 					'border-bottom':'2px solid #333'
 				})
 			})
 
 			$('#menu_wrap').mouseleave(function(){
 				$('.sub').stop().slideUp(500);
-				$('.menu_wrap').stop().animate({height:50},500);
 				$('#menu_wrap').css({
 					'border-bottom':'none'
 				})
@@ -76,6 +165,34 @@
 				})
 			});
 
+
+
+			$('#next').click(function(){
+				count++;
+				if(count >= slideLength){count = 0;}
+				slideMove();
+			});
+
+			$('#prev').click(function(){
+				count--;
+				if(count <= -1){count = slideLength-1;}
+				slideMove();
+			});
+
+			$('#main_slide').on({
+				mouseenter:function(){
+					clearInterval(slideInterval);
+				},
+				mouseleave:function(){
+					slideTimer();
+				}
+			});
+
+			$('#O>span').click(function(){
+				count = $(this).index();
+				slideMove();
+			});
+
 		})
 	</script>
 </head>
@@ -94,51 +211,43 @@
 						<li>
 							<a href="#"><span>메뉴</span></a>
 							<ul class="sub">
-								<li><a href="#">sub01</a></li>
-								<li><a href="#">sub02</a></li>
-								<li><a href="#">sub03</a></li>
-								<li><a href="#">sub04</a></li>
-								<li><a href="#">sub05</a></li>
+								<li><a href="#">음료</a></li>
+								<li><a href="#">베이커리</a></li>
+								<li><a href="#">MD</a></li>
+								<li><a href="#">비니스트</a></li>
+								<li><a href="#">원두</a></li>
 							</ul>
 						</li>
 						<li>
 							<a href="#"><span>이디야멤버스</span></a>
 							<ul class="sub">
-								<li><a href="#">sub01</a></li>
-								<li><a href="#">sub02</a></li>
-								<li><a href="#">sub03</a></li>
-								<li><a href="#">sub04</a></li>
-								<li><a href="#">sub05</a></li>
+								<li><a href="#">멤버스 소개</a></li>
+								<li><a href="#">2018 리워드</a></li>
+								<li><a href="#">이디야 카드</a></li>
+								<li><a href="#">선물하기</a></li>
+								<li><a href="#">스마트 오더</a></li>
+								<li><a href="#">FAQ</a></li>
 							</ul>
 						</li>
 						<li>
 							<a href="#"><span>이디야커피랩</span></a>
 							<ul class="sub">
-								<li><a href="#">sub01</a></li>
-								<li><a href="#">sub02</a></li>
-								<li><a href="#">sub03</a></li>
-								<li><a href="#">sub04</a></li>
-								<li><a href="#">sub05</a></li>
+								<li><a href="#">이디야커피랩</a></li>
+								<li><a href="#">이디야커피랩 메뉴</a></li>
 							</ul>
 						</li>
 						<li>
 							<a href="#"><span>이디야컬쳐랩</span></a>
 							<ul class="sub">
-								<li><a href="#">sub01</a></li>
-								<li><a href="#">sub02</a></li>
-								<li><a href="#">sub03</a></li>
-								<li><a href="#">sub04</a></li>
-								<li><a href="#">sub05</a></li>
+								<li><a href="#">뮤직페스타</a></li>
+								<li><a href="#">컬쳐랩 시설대괸</a></li>
 							</ul>
 						</li>
 						<li>
 							<a href="#"><span>공지사항</span></a>
 							<ul class="sub">
-								<li><a href="#">sub01</a></li>
-								<li><a href="#">sub02</a></li>
-								<li><a href="#">sub03</a></li>
-								<li><a href="#">sub04</a></li>
-								<li><a href="#">sub05</a></li>
+								<li><a href="#">이디야 소식</a></li>
+								<li><a href="#">이벤트</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -146,5 +255,26 @@
 			</div>
 		</div>
 	</header>
+	<div id="contents">
+		<div id="main_slide">
+			<span id="prev"><img src="./images/main_visual_prev.png" alt=""></span>
+			<span id="next"><img src="./images/main_visual_next.png" alt=""></span>
+			<ul>
+				<li class="slideimg01"></li>
+				<li class="slideimg02"></li>
+				<li class="slideimg03"></li>
+				<li class="slideimg04"></li>
+				<li class="slideimg05"></li>
+			</ul>
+			<div id="O">
+				<span style="color:#223C86;">●</span>
+				<span>●</span>
+				<span>●</span>
+				<span>●</span>
+				<span>●</span>
+			</div>
+		</div>
+		<section id="section01"></section>
+	</div>
 </body>
 </html>

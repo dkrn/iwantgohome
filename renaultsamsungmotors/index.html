@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>르노삼성자동차</title>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/font.css">
+	<script src="./js/jq.js"></script>
+	<style>
+		body{font-family:'Renault Life';}
+
+		header{width: 100%; background: #ccc; position: relative; z-index:9999;}
+
+		#bg{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index:9;}
+
+		#logo{position: relative; float: left; padding: 20px 0; z-index:10;}
+
+		#menu_wrap{width: 1100px; margin: 0 auto; height:80px; background: #ddd; position: relative;}
+		#menu_wrap:after{content:""; display: block; clear: both;}
+
+		#menu{width: 100%; position: absolute; left: 0; padding-left:90px;}
+		#menu>ul{}
+		#menu>ul:after{content:""; display: block; clear: both;}
+
+		#menu>ul>li{float: left;}
+		#menu>ul>li>a{line-height: 80px; height: 80px; width: 150px; display: block; text-align: center;}
+		#menu>ul>li>a:after{content:""; display: block; width: 0; margin: 0 auto; margin-top: -3px; transition-duration:0.3s; border-bottom: 3px solid #ffcc33;}
+		#menu>ul>li>a.active:after{content:""; width: 100%;}
+		#menu>ul>li>a>img{display:inline-block;}
+
+		.sub{padding: 10px 0;}
+		.sub>li{}
+		.sub>li>a{display: block; padding: 10px 0; font-size:14px; text-align: center;}
+		.sub>li>a:hover{background: #333; color:white;}
+
+		#menu_btn>img,#login>img{display:inline-block;}
+		#login{position: absolute; top: 0; right: 100px; line-height: 80px; height: 80px;}
+		#menu_btn{position: absolute; top: 0; right: 0; line-height: 80px; height: 80px;}
+	</style>
+	<script>
+		$(function(){
+			$('body').append('<div id="bg"></div>')
+			$('#bg').hide();
+			$('.sub').hide();
+
+			function headerBye(){
+				$('.sub').hide();
+				$('header').stop().animate({height:'100%'},300);
+				$('#bg').stop().animate({opacity:0},300);
+			};
+
+			$('#menu>ul>li').hover(function(){
+				var subHeight = $('.sub').eq($(this).index()).height() + 100;
+				console.log(subHeight);
+
+				$('header').stop().animate({height:subHeight},300);
+				$('#bg').stop().show().animate({opacity:1},300);
+
+				$('.sub').eq($(this).index()).show();
+				$('#menu>ul>li>a').eq($(this).index()).addClass('active');
+			},function(){			
+				$('#menu>ul>li>a').eq($(this).index()).removeClass('active');
+			});
+
+			$('header').mouseleave(function(){
+				headerBye();
+			});
+
+			$('#logo,#menu_btn,#login').mouseenter(function(){
+				headerBye();
+			})
+
+			$('#menu>ul>li>a').mouseenter(function(){
+				$('.sub').hide();
+			});
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<div id="menu_wrap">
+			<h1 id="logo"><a href="#"><img src="./images/logo.png" alt="logo"></a></h1>
+			<nav id="menu">
+				<ul>
+					<li><a href="#"><img src="./images/fnt_gnb01.png" alt="model"></a>
+						<ul class="sub">
+							<li><a href="#">전체 모델 보기</a></li>
+							<li><a href="#">모델 비교</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><img src="./images/fnt_gnb02.png" alt="buy"></a>
+						<ul class="sub">
+							<li><a href="#">내 차 만들기(견적)</a></li>
+							<li><a href="#">영업거점 조회</a></li>
+							<li><a href="#">구매절차 안내</a></li>
+							<li><a href="#">맞춤형 금융계산기</a></li>
+							<li><a href="#">이달의 구매 혜택</a></li>
+							<li><a href="#">재구매 혜택</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><img src="./images/fnt_gnb03.png" alt="service"></a>
+						<ul class="sub">
+							<li><a href="#">멤버십 서비스</a></li>
+							<li><a href="#">MY르노삼성 앱</a></li>
+							<li><a href="#">차량관리 가이드</a></li>
+							<li><a href="#">A/S 뉴스레터</a></li>
+							<li><a href="#">오토솔루션 서비스</a></li>
+							<li><a href="#">액세서리</a></li>
+							<li><a href="#">서비스 네트워크 조회</a></li>
+							<li><a href="#">엔젤센터</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><img src="./images/fnt_gnb07.png" alt="news"></a>
+						<ul class="sub">
+							<li><a href="#">뉴스</a></li>
+							<li><a href="#">이벤트</a></li>
+							<li><a href="#">고객의 소리</a></li>
+						</ul>
+					</li>
+					<li style="margin-left:70px"><a href="#"><img src="./images/fnt_gnb04.png" alt="myrenaultsamsung"></a>
+						<ul class="sub">
+							<li><a href="#">회원정보 관리</a></li>
+							<li><a href="#">MY혜택</a></li>
+							<li><a href="#">내 차 관리</a></li>
+							<li><a href="#">내 견적 관리</a></li>
+							<li><a href="#">구매 청약 조회</a></li>
+							<li><a href="#">상담 및 문의내역</a></li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#" id="login"><img src="./images/fnt_gnb05.png" alt="login" style="margin-bottom:3px"></a>
+				<a href="#" id="menu_btn"><img src="./images/gnb_all.png" alt="menubtn"></a>
+			</nav>
+		</div>
+	</header>
+</body>
+</html>
