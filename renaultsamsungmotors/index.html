@@ -10,13 +10,19 @@
 	<style>
 		body{font-family:'Renault Life';}
 
-		header{width: 100%; background: #ccc; position: relative; z-index:9999;}
+
+
+		header{width: 100%; height: 80px; position: absolute; z-index:9999; min-width:1100px;}
+
+		#header_wrap{width: 100%; height: 80px; position: absolute; overflow: hidden;}
+		#header_wrap.border:after{content:""; display: block; border-bottom: 1px solid #f0f0f1; margin-top: -3px;}
+		#header_wrap.bg{background: #fff;}
 
 		#bg{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index:9;}
 
 		#logo{position: relative; float: left; padding: 20px 0; z-index:10;}
 
-		#menu_wrap{width: 1100px; margin: 0 auto; height:80px; background: #ddd; position: relative;}
+		#menu_wrap{width: 1100px; margin: 0 auto; height:80px; position: relative;}
 		#menu_wrap:after{content:""; display: block; clear: both;}
 
 		#menu{width: 100%; position: absolute; left: 0; padding-left:90px;}
@@ -32,35 +38,70 @@
 		.sub{padding: 10px 0;}
 		.sub>li{}
 		.sub>li>a{display: block; padding: 10px 0; font-size:14px; text-align: center;}
-		.sub>li>a:hover{background: #333; color:white;}
+		.sub>li>a:hover,.allSub>li>a:hover{background: #333; color:white;}
 
 		#menu_btn>img,#login>img{display:inline-block;}
 		#login{position: absolute; top: 0; right: 100px; line-height: 80px; height: 80px;}
 		#menu_btn{position: absolute; top: 0; right: 0; line-height: 80px; height: 80px;}
+
+		#allMenu_wrap{position: absolute; left: 90px; top: 90px; background: #fff;}
+		#allMenu{}
+		#allMenu>ul{}
+		#allMenu>ul>li{float: left; width: 150px;}
+
+		.allSub{}
+		.allSub>li{}
+		.allSub>li>a{display: block; padding: 10px 0; text-align: center; font-size:14px;}
+
+	
+
+		#contents{width: 100%;}
+
+		#main_slide{max-width:100% height: 650px;}
+		#main_slide>ul{}
+		#main_slide>ul>li{width: 1680px; height: 650px;}
+
+		.slideimg01{background: url(./images/slide00.jpg) 50% 0px no-repeat;}
+		.slideimg02{background: url(./images/slide01.jpg) 50% 0px no-repeat;}
+		.slideimg03{background: url(./images/slide02.jpg) 50% 0px no-repeat;}
+		.slideimg04{background: url(./images/slide03.jpg) 50% 0px no-repeat;}
+		.slideimg05{background: url(./images/slide04.jpg) 50% 0px no-repeat;}
 	</style>
 	<script>
 		$(function(){
-			$('body').append('<div id="bg"></div>')
+			var menuCount = 0;
+
+			$('body').prepend('<div id="bg"></div>')
 			$('#bg').hide();
 			$('.sub').hide();
+			$('#allMenu_wrap').hide();
+
+
 
 			function headerBye(){
+				if(menuCount == 1){return false;}
 				$('.sub').hide();
-				$('header').stop().animate({height:'100%'},300);
+				$('#menu>ul>li>a').removeClass('active');
+				$('#header_wrap').removeAttr('style');
+				$('#header_wrap').stop().animate({height:'80px'},300);
 				$('#bg').stop().animate({opacity:0},300);
 			};
 
-			$('#menu>ul>li').hover(function(){
+			$('a').click(function(e){
+				e.preventDefault();
+			});
+
+			$('#menu>ul>li').mouseenter(function(){
+				if(menuCount == 1){return false;}
 				var subHeight = $('.sub').eq($(this).index()).height() + 100;
 				console.log(subHeight);
 
-				$('header').stop().animate({height:subHeight},300);
+				$('#header_wrap').stop().animate({height:subHeight},300);
+				$('#header_wrap').css({background:'white'});
 				$('#bg').stop().show().animate({opacity:1},300);
 
 				$('.sub').eq($(this).index()).show();
-				$('#menu>ul>li>a').eq($(this).index()).addClass('active');
-			},function(){			
-				$('#menu>ul>li>a').eq($(this).index()).removeClass('active');
+				$('#menu>ul>li>a').removeClass('active').eq($(this).index()).addClass('active');
 			});
 
 			$('header').mouseleave(function(){
@@ -72,67 +113,162 @@
 			})
 
 			$('#menu>ul>li>a').mouseenter(function(){
+				if(menuCount == 1){return false;}
 				$('.sub').hide();
+			});
+
+			$('#menu_btn').click(function(){
+				if(menuCount == 0){
+					menuCount++;
+					$('#header_wrap').stop().animate({height:'412px'},300);
+					$('#header_wrap').css({background:'white'}).addClass('border');
+					$('#bg').stop().show().animate({opacity:1},300);
+					$('#menu_btn').html('<img src="./images/gnb_all_on.png">');
+					$('#allMenu_wrap').show();
+				}else if(menuCount == 1){
+					menuCount--;
+					$('#header_wrap').removeClass('border')
+					$('#menu_btn').html('<img src="./images/gnb_all.png">');
+					$('#allMenu_wrap').hide();
+					headerBye();
+				}
+			})
+
+			$(window).scroll(function(){
+				var POS = window.pageYOffset;
+				console.log(POS);
+
+				if(POS >= 80){
+					$('header').css({position:'fixed'});
+					$('#header_wrap').addClass('bg')
+				}else{
+					$('header').css({position:'absolute'});
+					$('#header_wrap').removeClass('bg');
+				}
 			});
 		});
 	</script>
 </head>
 <body>
 	<header>
-		<div id="menu_wrap">
-			<h1 id="logo"><a href="#"><img src="./images/logo.png" alt="logo"></a></h1>
-			<nav id="menu">
-				<ul>
-					<li><a href="#"><img src="./images/fnt_gnb01.png" alt="model"></a>
-						<ul class="sub">
-							<li><a href="#">전체 모델 보기</a></li>
-							<li><a href="#">모델 비교</a></li>
+		<div id="header_wrap">
+			<div id="menu_wrap">
+				<h1 id="logo"><a href="#"><img src="./images/logo.png" alt="logo"></a></h1>
+				<nav id="menu">
+					<ul>
+						<li><a href="#"><img src="./images/fnt_gnb01.png" alt="model"></a>
+							<ul class="sub">
+								<li><a href="#">전체 모델 보기</a></li>
+								<li><a href="#">모델 비교</a></li>
+							</ul>
+						</li>
+						<li><a href="#"><img src="./images/fnt_gnb02.png" alt="buy"></a>
+							<ul class="sub">
+								<li><a href="#">내 차 만들기(견적)</a></li>
+								<li><a href="#">영업거점 조회</a></li>
+								<li><a href="#">구매절차 안내</a></li>
+								<li><a href="#">맞춤형 금융계산기</a></li>
+								<li><a href="#">이달의 구매 혜택</a></li>
+								<li><a href="#">재구매 혜택</a></li>
+							</ul>
+						</li>
+						<li><a href="#"><img src="./images/fnt_gnb03.png" alt="service"></a>
+							<ul class="sub">
+								<li><a href="#">멤버십 서비스</a></li>
+								<li><a href="#">MY르노삼성 앱</a></li>
+								<li><a href="#">차량관리 가이드</a></li>
+								<li><a href="#">A/S 뉴스레터</a></li>
+								<li><a href="#">오토솔루션 서비스</a></li>
+								<li><a href="#">액세서리</a></li>
+								<li><a href="#">서비스 네트워크 조회</a></li>
+								<li><a href="#">데빌센터</a></li>
+							</ul>
+						</li>
+						<li><a href="#"><img src="./images/fnt_gnb07.png" alt="news"></a>
+							<ul class="sub">
+								<li><a href="#">뉴스</a></li>
+								<li><a href="#">이벤트</a></li>
+								<li><a href="#">고객의 소리</a></li>
+							</ul>
+						</li>
+						<li style="margin-left:70px"><a href="#"><img src="./images/fnt_gnb04.png" alt="myrenaultsamsung"></a>
+							<ul class="sub">
+								<li><a href="#">회원정보 관리</a></li>
+								<li><a href="#">MY혜택</a></li>
+								<li><a href="#">내 차 관리</a></li>
+								<li><a href="#">내 견적 관리</a></li>
+								<li><a href="#">구매 청약 조회</a></li>
+								<li><a href="#">상담 및 문의내역</a></li>
+							</ul>
+						</li>
+					</ul>
+					<a href="#" id="login"><img src="./images/fnt_gnb05.png" alt="login" style="margin-bottom:3px"></a>
+					<a href="#" id="menu_btn"><img src="./images/gnb_all.png" alt="menubtn"></a>
+				</nav>
+				<nav id="allMenu_wrap">
+					<div id="allMenu">
+						<ul>
+							<li>
+								<ul class="allSub">
+									<li><a href="#">전체 모델 보기</a></li>
+									<li><a href="#">모델 비교</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="allSub">
+									<li><a href="#">내 차 만들기(견적)</a></li>
+									<li><a href="#">영업거점 조회</a></li>
+									<li><a href="#">구매절차 안내</a></li>
+									<li><a href="#">맞춤형 금융계산기</a></li>
+									<li><a href="#">이달의 구매 혜택</a></li>
+									<li><a href="#">재구매 혜택</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="allSub">
+									<li><a href="#">멤버십 서비스</a></li>
+									<li><a href="#">MY르노삼성 앱</a></li>
+									<li><a href="#">차량관리 가이드</a></li>
+									<li><a href="#">A/S 뉴스레터</a></li>
+									<li><a href="#">오토솔루션 서비스</a></li>
+									<li><a href="#">액세서리</a></li>
+									<li><a href="#">서비스 네트워크 조회</a></li>
+									<li><a href="#">데빌센터</a></li>
+								</ul>
+							</li>
+							<li>
+								<ul class="allSub">
+									<li><a href="#">뉴스</a></li>
+									<li><a href="#">이벤트</a></li>
+									<li><a href="#">고객의 소리</a></li>
+								</ul>
+							</li>
+							<li style="margin-left:70px">
+								<ul class="allSub">
+									<li><a href="#">회원정보 관리</a></li>
+									<li><a href="#">MY혜택</a></li>
+									<li><a href="#">내 차 관리</a></li>
+									<li><a href="#">내 견적 관리</a></li>
+									<li><a href="#">구매 청약 조회</a></li>
+									<li><a href="#">상담 및 문의내역</a></li>
+								</ul>
+							</li>
 						</ul>
-					</li>
-					<li><a href="#"><img src="./images/fnt_gnb02.png" alt="buy"></a>
-						<ul class="sub">
-							<li><a href="#">내 차 만들기(견적)</a></li>
-							<li><a href="#">영업거점 조회</a></li>
-							<li><a href="#">구매절차 안내</a></li>
-							<li><a href="#">맞춤형 금융계산기</a></li>
-							<li><a href="#">이달의 구매 혜택</a></li>
-							<li><a href="#">재구매 혜택</a></li>
-						</ul>
-					</li>
-					<li><a href="#"><img src="./images/fnt_gnb03.png" alt="service"></a>
-						<ul class="sub">
-							<li><a href="#">멤버십 서비스</a></li>
-							<li><a href="#">MY르노삼성 앱</a></li>
-							<li><a href="#">차량관리 가이드</a></li>
-							<li><a href="#">A/S 뉴스레터</a></li>
-							<li><a href="#">오토솔루션 서비스</a></li>
-							<li><a href="#">액세서리</a></li>
-							<li><a href="#">서비스 네트워크 조회</a></li>
-							<li><a href="#">엔젤센터</a></li>
-						</ul>
-					</li>
-					<li><a href="#"><img src="./images/fnt_gnb07.png" alt="news"></a>
-						<ul class="sub">
-							<li><a href="#">뉴스</a></li>
-							<li><a href="#">이벤트</a></li>
-							<li><a href="#">고객의 소리</a></li>
-						</ul>
-					</li>
-					<li style="margin-left:70px"><a href="#"><img src="./images/fnt_gnb04.png" alt="myrenaultsamsung"></a>
-						<ul class="sub">
-							<li><a href="#">회원정보 관리</a></li>
-							<li><a href="#">MY혜택</a></li>
-							<li><a href="#">내 차 관리</a></li>
-							<li><a href="#">내 견적 관리</a></li>
-							<li><a href="#">구매 청약 조회</a></li>
-							<li><a href="#">상담 및 문의내역</a></li>
-						</ul>
-					</li>
-				</ul>
-				<a href="#" id="login"><img src="./images/fnt_gnb05.png" alt="login" style="margin-bottom:3px"></a>
-				<a href="#" id="menu_btn"><img src="./images/gnb_all.png" alt="menubtn"></a>
-			</nav>
+					</div>
+				</nav>
+			</div>
 		</div>
 	</header>
+	<div id="contents">
+		<div id="main_slide">
+			<ul>
+				<li class="slideimg01"></li>
+				<li class="slideimg02"></li>
+				<li class="slideimg03"></li>
+				<li class="slideimg04"></li>
+				<li class="slideimg05"></li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>

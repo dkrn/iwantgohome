@@ -7,12 +7,10 @@
 	<link rel="stylesheet" href="./css/reset.css">
 	<script src="./js/jq.js"></script>
 	<style>
-		body{background: #fff;}
+		body{background: #fff; /*overflow: hidden;*/}
 
 
 
-		#header_wrap{width: 100%;}
-		
 		header{width: 100%; position: relative;}
 		header:after{content:""; display: block; clear: both;}
 
@@ -30,7 +28,9 @@
 		#menu>ul:after{content:""; display: block; clear: both;}
 		#menu>ul>li{float: left; width: 20%;}
 		#menu>ul>li>a{display: block; text-align: center; line-height: 60px; box-sizing:border-box; height: 60px; min-width:45px;}
-		#menu>ul>li>a>span{padding-bottom: 10px;}
+		#menu>ul>li>a>span{padding-bottom: 10px; position: relative;}
+		#menu>ul>li>a>span:after{content:""; display: block; width: 0; position: absolute; margin-top: -10px; transition-duration:0.3s; border-bottom: 4px solid #223C86; left: 0;}
+		#menu>ul>li>a>span.active:after{content:""; width: 100%;}
  
 		.sub{padding: 10px 0 15px;}
 		.sub>li{width: 100%;}
@@ -38,7 +38,7 @@
 
 
 
-		#contents{margin-top: 50px;}
+		#contents{margin-top: 60px;}
 
 		#main_slide{max-width:100%; height: 620px; overflow: hidden; position: relative;}
 		#main_slide>ul{width: 5760px; position: relative;}
@@ -144,13 +144,9 @@
 			});
 
 			$('#menu>ul>li').hover(function(){
-				$('#menu>ul>li>a>span').eq($(this).index()).css({
-					'border-bottom':'4px solid #333'
-				})
+				$('#menu>ul>li>a>span').eq($(this).index()).addClass('active');
 			},function(){
-				$('#menu>ul>li>a>span').eq($(this).index()).css({
-					'border-bottom':'none'
-				})
+				$('#menu>ul>li>a>span').eq($(this).index()).removeClass('active');
 			});
 
 			$('.sub>li>a').hover(function(){

@@ -2,7 +2,7 @@
 
 body{font-family: 'Noto Sans KR', sans-serif;}
 
-#wrap{width: 100%; overflow:hidden;}
+#wrap{width: 100%; /*overflow:hidden;*/}
 
 
 
@@ -84,7 +84,7 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 
 
 /*컨텐츠 01*/
-#content01{/*background: plum;*/}
+#content01{/*background: plum;*/ overflow: hidden;}
 .img{margin: 0 auto; opacity:0; position: relative;}
 .imgL{left: -50px;}
 .imgR{right: -50px;}
