@@ -6,147 +6,14 @@
 	<title>르노삼성자동차</title>
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/font.css">
+	<link rel="stylesheet" href="./css/style.css">
 	<script src="./js/jq.js"></script>
+	<script src="./js/script.js"></script>
 	<style>
-		body{font-family:'Renault Life';}
 
-
-
-		header{width: 100%; height: 80px; position: absolute; z-index:9999; min-width:1100px;}
-
-		#header_wrap{width: 100%; height: 80px; position: absolute; overflow: hidden;}
-		#header_wrap.border:after{content:""; display: block; border-bottom: 1px solid #f0f0f1; margin-top: -3px;}
-		#header_wrap.bg{background: #fff;}
-
-		#bg{position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index:9;}
-
-		#logo{position: relative; float: left; padding: 20px 0; z-index:10;}
-
-		#menu_wrap{width: 1100px; margin: 0 auto; height:80px; position: relative;}
-		#menu_wrap:after{content:""; display: block; clear: both;}
-
-		#menu{width: 100%; position: absolute; left: 0; padding-left:90px;}
-		#menu>ul{}
-		#menu>ul:after{content:""; display: block; clear: both;}
-
-		#menu>ul>li{float: left;}
-		#menu>ul>li>a{line-height: 80px; height: 80px; width: 150px; display: block; text-align: center;}
-		#menu>ul>li>a:after{content:""; display: block; width: 0; margin: 0 auto; margin-top: -3px; transition-duration:0.3s; border-bottom: 3px solid #ffcc33;}
-		#menu>ul>li>a.active:after{content:""; width: 100%;}
-		#menu>ul>li>a>img{display:inline-block;}
-
-		.sub{padding: 10px 0;}
-		.sub>li{}
-		.sub>li>a{display: block; padding: 10px 0; font-size:14px; text-align: center;}
-		.sub>li>a:hover,.allSub>li>a:hover{background: #333; color:white;}
-
-		#menu_btn>img,#login>img{display:inline-block;}
-		#login{position: absolute; top: 0; right: 100px; line-height: 80px; height: 80px;}
-		#menu_btn{position: absolute; top: 0; right: 0; line-height: 80px; height: 80px;}
-
-		#allMenu_wrap{position: absolute; left: 90px; top: 90px; background: #fff;}
-		#allMenu{}
-		#allMenu>ul{}
-		#allMenu>ul>li{float: left; width: 150px;}
-
-		.allSub{}
-		.allSub>li{}
-		.allSub>li>a{display: block; padding: 10px 0; text-align: center; font-size:14px;}
-
-	
-
-		#contents{width: 100%;}
-
-		#main_slide{max-width:100% height: 650px;}
-		#main_slide>ul{}
-		#main_slide>ul>li{width: 1680px; height: 650px;}
-
-		.slideimg01{background: url(./images/slide00.jpg) 50% 0px no-repeat;}
-		.slideimg02{background: url(./images/slide01.jpg) 50% 0px no-repeat;}
-		.slideimg03{background: url(./images/slide02.jpg) 50% 0px no-repeat;}
-		.slideimg04{background: url(./images/slide03.jpg) 50% 0px no-repeat;}
-		.slideimg05{background: url(./images/slide04.jpg) 50% 0px no-repeat;}
 	</style>
 	<script>
-		$(function(){
-			var menuCount = 0;
 
-			$('body').prepend('<div id="bg"></div>')
-			$('#bg').hide();
-			$('.sub').hide();
-			$('#allMenu_wrap').hide();
-
-
-
-			function headerBye(){
-				if(menuCount == 1){return false;}
-				$('.sub').hide();
-				$('#menu>ul>li>a').removeClass('active');
-				$('#header_wrap').removeAttr('style');
-				$('#header_wrap').stop().animate({height:'80px'},300);
-				$('#bg').stop().animate({opacity:0},300);
-			};
-
-			$('a').click(function(e){
-				e.preventDefault();
-			});
-
-			$('#menu>ul>li').mouseenter(function(){
-				if(menuCount == 1){return false;}
-				var subHeight = $('.sub').eq($(this).index()).height() + 100;
-				console.log(subHeight);
-
-				$('#header_wrap').stop().animate({height:subHeight},300);
-				$('#header_wrap').css({background:'white'});
-				$('#bg').stop().show().animate({opacity:1},300);
-
-				$('.sub').eq($(this).index()).show();
-				$('#menu>ul>li>a').removeClass('active').eq($(this).index()).addClass('active');
-			});
-
-			$('header').mouseleave(function(){
-				headerBye();
-			});
-
-			$('#logo,#menu_btn,#login').mouseenter(function(){
-				headerBye();
-			})
-
-			$('#menu>ul>li>a').mouseenter(function(){
-				if(menuCount == 1){return false;}
-				$('.sub').hide();
-			});
-
-			$('#menu_btn').click(function(){
-				if(menuCount == 0){
-					menuCount++;
-					$('#header_wrap').stop().animate({height:'412px'},300);
-					$('#header_wrap').css({background:'white'}).addClass('border');
-					$('#bg').stop().show().animate({opacity:1},300);
-					$('#menu_btn').html('<img src="./images/gnb_all_on.png">');
-					$('#allMenu_wrap').show();
-				}else if(menuCount == 1){
-					menuCount--;
-					$('#header_wrap').removeClass('border')
-					$('#menu_btn').html('<img src="./images/gnb_all.png">');
-					$('#allMenu_wrap').hide();
-					headerBye();
-				}
-			})
-
-			$(window).scroll(function(){
-				var POS = window.pageYOffset;
-				console.log(POS);
-
-				if(POS >= 80){
-					$('header').css({position:'fixed'});
-					$('#header_wrap').addClass('bg')
-				}else{
-					$('header').css({position:'absolute'});
-					$('#header_wrap').removeClass('bg');
-				}
-			});
-		});
 	</script>
 </head>
 <body>
@@ -260,7 +127,7 @@
 		</div>
 	</header>
 	<div id="contents">
-		<div id="main_slide">
+		<section id="main_slide">
 			<ul>
 				<li class="slideimg01"></li>
 				<li class="slideimg02"></li>
@@ -268,7 +135,24 @@
 				<li class="slideimg04"></li>
 				<li class="slideimg05"></li>
 			</ul>
-		</div>
+			<div id="slideBtn">
+				<span id="prev"><img src="./images/left-arrow.png" alt="prev"></span>
+				<span id="next"><img src="./images/right-arrow.png" alt="next"></span>
+			</div>
+			<div id="O">
+				<span><img src="./images/main_dot_on.png" alt="O"></span>
+				<span><img src="./images/main_dot_off.png" alt="O"></span>
+				<span><img src="./images/main_dot_off.png" alt="O"></span>
+				<span><img src="./images/main_dot_off.png" alt="O"></span>
+				<span><img src="./images/main_dot_off.png" alt="O"></span>
+			</div>
+		</section>
+		<section id="content01">
+			<div class="content_btn"></div>
+			<div class="content_btn"></div>
+			<div class="content_btn"></div>
+			<div class="content_btn"></div>
+		</section>
 	</div>
 </body>
 </html>
