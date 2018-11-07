@@ -32,6 +32,7 @@ $(function(){
 	}
 
 	function siteResize(){
+		if(WidthSize <= 1100){WidthSize = 1100;}
 		$('#main_slide>ul').css({width:WidthSize*5});
 		$('#main_slide>ul>li').css({width:WidthSize});
 	}
@@ -99,7 +100,7 @@ $(function(){
 		var POS = window.pageYOffset;
 		console.log(POS);
 
-		if(POS >= 81){
+		if(POS >= 1){
 			// $('header').css({
 			// 	position:'fixed',top:'-80px' // 외한번박에않되
 			// }).animate({
@@ -128,21 +129,22 @@ $(function(){
 				MSMove();
 			});
 
-			$('#prev').click(function(){
-				MSCount--;
-				if(MSCount == -1){
-					MSCount = MSLength -1;
-				}
-				MSMove();
-			});
+	$('#prev').click(function(){
+		MSCount--;
+		if(MSCount == -1){
+			MSCount = MSLength -1;
+		}
+		MSMove();
+	});
 
-			$('#main_slide').on({
-				mouseover:function(){clearInterval(slideInterval)},
-				mouseout:function(){timer();}
-			});
+	$('#main_slide').on({
+		mouseover:function(){clearInterval(slideInterval)},
+		mouseout:function(){timer();}
+	});
 
-			$('#O>span').click(function(){
-				MSCount = $(this).index();
-				MSMove();
-			});
-		});
+	$('#O>span').click(function(){
+		MSCount = $(this).index();
+		MSMove();
+	});
+
+});

@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-	body{font-family:'Renault Life';}
+	body{}
 
 
 
@@ -49,7 +49,7 @@
 
 	#contents{width: 100%;}
 
-	#main_slide{max-width:100% height: 650px; position: relative; overflow: hidden;}
+	#main_slide{min-width:1100px; max-width:100% height: 650px; position: relative; overflow: hidden;}
 	#main_slide>ul{width: 8400px; position: relative;}
 	#main_slide>ul:after{content:""; display: block; clear: both;}
 	#main_slide>ul>li{width: 1680px; height: 650px; float: left;}
@@ -73,5 +73,28 @@
 
 	#content01{width: 1100px; margin: 0 auto; margin-top: 50px;}
 	#content01:after{content:""; display: block; clear: both;}
-	.content_btn{width: 256.25px; height: 275px; background: #ccc; float: left; margin-right: 25px;}
-	.content_btn:last-child{margin: 0;}
+	.content_btn_wrap{width: 256.25px; height: 200px; background: #f8f8f6; float: left; margin-right: 25px; border-bottom: 6px solid #ffcc33; transition-duration:0.5s; cursor:pointer;}
+	.content_btn_wrap:hover{border-bottom: 200px solid #ffcc33;}
+	.content_btn_wrap:last-child{margin: 0;}
+	.content_btn_wrap:first-child img{padding: 9px 0;}
+	.content_btn_wrap:nth-child(3) img{padding: 1.5px 0;}
+	.content_btn_wrap:last-child img{padding:7px 0;}
+	.content_btn{width: 244.25px; height: 188px; margin: 0 auto; text-align: center; background: #f8f8f6; margin-top: 6px; padding-top:35px;}
+	.content_btn>img{margin: 0 auto;}
+	.cb_t01{font-family: 'Noto Sans KR', sans-serif; font-weight:bold; padding-top: 10px;}
+	.cb_t02{font-family:'Renault Life'; color :#999;}
+
+	#content02{width: 1100px; margin: 0 auto; margin-top: 150px;}
+	#content02>h2{font-family:'Renault Life'; text-align: center; font-size:36px; font-weight:normal;}
+	#FMcar_top,#FMcar_bottom{padding-top: 50px;}
+	#FMcar_top:after{content:""; display: block; clear: both;}
+	#FMcar_bottom:after{content:""; display: block; clear: both;}
+	#FMcar_top>.FMcar:last-child{padding: 0;}
+	#FMcar_bottom>.FMcar:first-child{padding-left: 140.3px;}
+	.FMcar{float: left; padding-right: 22.6px;}
+	.FMcar>h2{text-align: center; font-family:'Renault Life'; font-size:24px;}
+	.FMcar>ul{border-top: 1px solid #f0f0f1; margin-top: 10px;}
+	.FMcar>ul:after{content:""; display: block; clear: both;}
+	.FMcar>ul>li{float: left; width: 50%; height: 40px; line-height: 40px; text-align: center; font-size:13px; cursor:pointer;}
+	.FMcar>ul>li:hover{color:#ffcc33;}
+	/*opacity0 top-50px? -> opacity1 t0 */
