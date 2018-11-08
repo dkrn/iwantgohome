@@ -5,6 +5,7 @@ $(function(){
 	var WidthSize = window.outerWidth;
 	var MSLength = $('#main_slide>ul>li').length;
 	var allMenuHeight = $('#allMenu_wrap').height() + 100;
+	var MWHeight = $('#menu_wrap').height();
 	var slideInterval;
 
 	$('body').prepend('<div id="bg"></div>')
@@ -21,7 +22,7 @@ $(function(){
 		$('.sub').hide();
 		$('#menu>ul>li>a').removeClass('active');
 		$('#header_wrap').removeAttr('style');
-		$('#header_wrap').stop().animate({height:'80px'},300);
+		$('#header_wrap').stop().animate({height:MWHeight},300);
 		$('#bg').stop().animate({opacity:0,'z-index':-1},300);
 	};
 
@@ -55,15 +56,16 @@ $(function(){
 
 	$('#menu>ul>li').mouseenter(function(){
 		if(menuCount == 1){return false;}
-		var subHeight = $('.sub').eq($(this).index()).height() + 100;
+		var i = $(this).index();
+		var subHeight = $('.sub').eq(i).height() + 100;
 		console.log(subHeight);
 
 		$('#header_wrap').stop().animate({height:subHeight},300);
 		$('#header_wrap').css({background:'white'});
 		$('#bg').stop().show().css({'z-index':9}).animate({opacity:1},300);
 
-		$('.sub').eq($(this).index()).show();
-		$('#menu>ul>li>a').removeClass('active').eq($(this).index()).addClass('active');
+		$('.sub').eq(i).show();
+		$('#menu>ul>li>a').removeClass('active').eq(i).addClass('active');
 	});
 
 	$('header').mouseleave(function(){
@@ -145,6 +147,50 @@ $(function(){
 	$('#O>span').click(function(){
 		MSCount = $(this).index();
 		MSMove();
+	});
+
+	$('#FMcar_top>.FMcar').hover(function(){
+		var i = $(this).index();
+
+		$('#FMcar_top>.FMcar>.FMcar_img02').eq(i).stop().animate({
+			opacity:1
+		});
+		$('#FMcar_top>.FMcar>ul').eq(i).stop().animate({
+			bottom:'5px',
+			opacity:1
+		});
+	},function(){
+		var i = $(this).index();
+
+		$('#FMcar_top>.FMcar>.FMcar_img02').eq(i).stop().animate({
+			opacity:0
+		});
+		$('#FMcar_top>.FMcar>ul').eq(i).stop().animate({
+			bottom:'-15px',
+			opacity:0
+		});
+	});
+
+	$('#FMcar_bottom>.FMcar').hover(function(){
+		var i = $(this).index();
+
+		$('#FMcar_bottom>.FMcar>.FMcar_img02').eq(i).stop().animate({
+			opacity:1
+		});
+		$('#FMcar_bottom>.FMcar>ul').eq(i).stop().animate({
+			bottom:'5px',
+			opacity:1
+		});
+	},function(){
+		var i = $(this).index();
+
+		$('#FMcar_bottom>.FMcar>.FMcar_img02').eq(i).stop().animate({
+			opacity:0
+		});
+		$('#FMcar_bottom>.FMcar>ul').eq(i).stop().animate({
+			bottom:'-15px',
+			opacity:0
+		});
 	});
 
 });
