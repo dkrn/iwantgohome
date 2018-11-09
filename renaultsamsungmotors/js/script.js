@@ -102,16 +102,9 @@ $(function(){
 		var POS = window.pageYOffset;
 		console.log(POS);
 
-		if(POS >= 1){
-			// $('header').css({
-			// 	position:'fixed',top:'-80px' // 외한번박에않되
-			// }).animate({
-			// 	top:0
-			// });
-			$('header').css({position:'fixed'});
+		if(POS >= 2){
 			$('header').addClass('bg');
 		}else if(POS == 0){
-			$('header').css({position:'absolute'});
 			$('header').removeClass('bg');
 		}
 	});
