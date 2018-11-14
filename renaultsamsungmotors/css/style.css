@@ -6,7 +6,6 @@
 
 	header{width: 100%; height: 80px; position: absolute; z-index:9999; min-width:1100px; background: rgba(255,255,255,0.2); transition-duration:0.5s;}
 	header.bg{background: #fff; box-shadow:0 1px 5px rgba(0,0,0,0.1); position:fixed;}
-
 	#header_wrap{width: 100%; height: 80px; position: absolute; overflow: hidden;}
 	#header_wrap.border:after{content:""; display: block; border-bottom: 1px solid #f0f0f1; margin-top: -3px;}
 
@@ -16,11 +15,9 @@
 
 	#menu_wrap{width: 1100px; margin: 0 auto; height:80px; position: relative;}
 	#menu_wrap:after{content:""; display: block; clear: both;}
-
 	#menu{width: 100%; position: absolute; left: 0; padding-left:90px;}
 	#menu>ul{}
 	#menu>ul:after{content:""; display: block; clear: both;}
-
 	#menu>ul>li{float: left;}
 	#menu>ul>li>a{line-height: 80px; height: 80px; width: 150px; display: block; text-align: center;}
 	#menu>ul>li>a:after{content:""; display: block; width: 0; margin: 0 auto; margin-top: -3px; transition-duration:0.3s; border-bottom: 3px solid #ffcc33;}
@@ -40,7 +37,6 @@
 	#allMenu{}
 	#allMenu>ul{}
 	#allMenu>ul>li{float: left; width: 150px;}
-
 	.allSub{}
 	.allSub>li{}
 	.allSub>li>a{display: block; padding: 10px 0; text-align: center; font-size:14px;}
@@ -66,9 +62,9 @@
 	#prev{left: 15px;}
 	#next{right: 15px;}
 
-	#O{position: absolute; bottom: 15px; left: 50%; margin-left: -40px;}
-	#O:after{content:""; display: block; clear: both;}
-	#O>span{float: left; padding-right: 10px; cursor:pointer;}
+	#pager{position: absolute; bottom: 15px; left: 50%; margin-left: -40px;}
+	#pager:after{content:""; display: block; clear: both;}
+	#pager>span{float: left; padding-right: 10px; cursor:pointer;}
 
 
 	#content01{width: 1100px; margin: 0 auto; margin-top: 50px;}
@@ -125,11 +121,12 @@
 	.sns_title{margin-bottom: 20px;}
 	.sns_title>h2{font-family:'Renault Life'; font-size:28px; font-weight:normal; text-align: center;}
 	.sns_title>h2:after{content:""; display: block; clear: both;}
-	.sns_title>h2>img{display: inline-block; padding-right: 10px;}
+	.sns_title>h2>img{display: inline-block; padding-right: 10px; margin-bottom:-5px;}
 	.sns_content{}
-	.sns_content>h4{padding-top: 25px; font-weight:normal;}
+	.sns_content>h4{margin-top: 25px; font-weight:normal; cursor:pointer;}
+	.sns_content>h4:hover{color:#ffcc33;}
 	.sns_content>p{font-size:13px; color:#888; position: absolute; bottom: 0;}
-	.sns_img{max-width: 100%; height: 250px;}
+	.sns_img{max-width: 100%; height: 250px; cursor:pointer;}
 
 	#instagram{}
 	#instagram>div{padding: 0 25px 0 10px;}
@@ -159,4 +156,35 @@
 	#NEWS{padding-right: 20px;}
 	#event{padding-left: 20px;}
 
-	/*sns에 hover*/
+
+
+	footer{width: 100%; margin-top: 150px;}
+	#footer_border{border-bottom: 1px solid #f0f0f1; border-top: 1px solid #f0f0f1;}
+	#footer_top{width: 780px; margin: 0 auto; font-size:14px;}
+	#footer_top strong{color: #363636;}
+	#footer_top>ul:after{content:""; display: block; clear: both;}
+	#footer_top>ul>li{float: left; padding-right:100px;}
+	#footer_top>ul>li:last-child{padding-right:0;}
+	#footer_top>ul>li>a{display: block; color: #696b71; padding: 20px;}
+	#footer_top>ul>li>a:first-child{padding-left:0;}
+	
+	.family_btn{position: relative;}
+	.family_btn>div{padding: 13px 0 13px 15px;}
+	.family_btn>div>button{display: block; padding: 7px 67px 7px 12px; background: #fff; border: 1px solid #f0f0f1; position: relative; color:#696b71; cursor:pointer; z-index:8;}
+	.family_btn>div>button>img{position: absolute; right: 7px; top: 50%; margin-top: -4px; transition-duration:0.3s;}
+	.family_menu{position: absolute; bottom:44px; border: 1px solid #f0f0f1; width: 147px; background: #fff; border-bottom:none; display: none;}
+	.family_menu>li{padding: 10px 0 10px 10px; cursor:pointer; color:#696b71; font-size:13px;}
+	.family_menu>li:hover{background: #f0f0f1;}
+
+	#footer_bottom{width: 1000px; margin: 0 auto;}
+	#footer_bottom:after{content:""; display: block; clear: both;}
+
+	.footer_sns_icon{width: 280px; margin: 35px auto;}
+	.footer_sns_icon:after{content:""; display: block; clear: both;}
+	.footer_sns_icon>img{float: left; margin-right: 63px; cursor:pointer;}
+	.footer_sns_icon>img:last-child{margin-right:0;}
+
+	.footer_text{width:33.3%; float: left;}
+	.footer_text>p{font-size:12px; color: #666666; text-align: center; line-height: 20px;}
+
+	#copyright{text-align: center; color: #999999; font-size:12px; margin-bottom: 35px;}
