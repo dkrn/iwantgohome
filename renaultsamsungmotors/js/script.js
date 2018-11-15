@@ -134,8 +134,8 @@ $(function(){
 	});
 
 	$('#main_slide').on({
-		mouseover:function(){clearInterval(slideInterval)},
-		mouseout:function(){timer();}
+		mouseenter:function(){clearInterval(slideInterval)},
+		mouseleave:function(){timer();}
 	});
 
 	$('#pager>span').click(function(){
@@ -185,6 +185,15 @@ $(function(){
 			bottom:'-15px',
 			opacity:0
 		});
+	});
+
+	$('.sns').on({
+		mouseenter:function(){
+			$('.sns_title_bg').eq($(this).index()).stop().animate({width:'100%'});
+		},
+		mouseleave:function(){
+			$('.sns_title_bg').eq($(this).index()).stop().animate({width:0});
+		}
 	});
 
 	$('.family_btn').click(function(){
