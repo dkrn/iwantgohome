@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+*{margin: 0;padding: 0; box-sizing:border-box; font-family: 'Nanum Gothic', sans-serif; /*font-family: 'Noto Sans KR', sans-serif;*/}
+ul,li{list-style:none;}
+a{text-decoration:none; display: block;}
+a:link,a:hover,a:visited{color:black;}
+img{display:block; width: auto;}
+.after:after{content:""; display: block; clear: both;}
+
+.top-nav{}
+.top-nav>ul{float: right; margin-bottom: 0 !important; padding: 8px 0;}
+.top-nav>ul>li{float: left;}
+.top-nav>ul>li>a{font-size:13px; height: 25px; line-height: 25px; padding: 0 8px;}
+.top-nav>ul>li>a:after{content:""; display: block; clear: both;}
+.sns-icons{}
+.sns-icons>a{height: 25px;}
+.sns-icons>a>img{float: left; padding: 2px 0 0 5px;}
+.sns-icons>a>img:first-child{padding-left: 0;}
+
+.carousel-indicators{bottom: 100px;}
+
+/*header end*/
+
+.main-contents{position: relative; top: -100px;}
+.main-contents>div{background: white; position: relative;}
+.main-contents>div>div{height: 300px; float: left; padding: 15px 30px;}
+
+.coffee-news{}
+.coffee-news>h3{}
+.coffee-news>h3>span{float: right;}
+.coffee-news>h3>span>a{font-size:14px; line-height: 33px; color:white !important;}
+.coffee-news>ul{}
+.coffee-news>ul>li{padding: 3px 0;}
+.coffee-news>ul>li:after{content:""; display: block; clear: both;}
+.coffee-news>ul>li>a{display:inline-block; color:white !important;}
+.coffee-news>ul>li>span{float: right; font-size:13px;}
+
+.coffee-story{background: url(../images/bg01.jpg) no-repeat top center; background-size:cover; position: relative; cursor:pointer;}
+.coffee-story>h3{font-family: 'Noto Sans KR'; font-weight: bold; position: absolute; width: 120px; height: 120px; text-align: center; border: 1px solid #fff; padding-top: 25px; left: 50%; margin-left: -60px; top: 50%; margin-top: -60px;}
+
+.create-coffee{background: #6c757d; cursor:pointer;}
+.create-coffee>h3{font-family: 'Noto Sans KR'; font-weight: bold;}
+.create-coffee>h3:after{content:""; width: 80px; height: 1px; background: #fff; display: block; margin-top: 20px;}
+.create-coffee>p{font-size:14px;}
+
+.find-coffee{cursor:pointer;}
+.find-coffee>h3{font-family: 'Noto Sans KR'; font-weight: bold;}
+.find-coffee>h3:after{content:""; width: 80px; height: 1px; background: #000; display: block; margin-top: 20px;}
+.find-coffee>p{font-size:14px;}
+
+.find-store{position: relative;}
+.find-store>h3{font-family: 'Noto Sans KR'; font-weight: bold;}
+.find-store>form{position: absolute; bottom: 50px;}
+
+.menu-go{background: url(../images/bg04.jpg) no-repeat top center; background-size:cover; cursor:pointer}
+.menu-go>h3{font-family: 'Noto Sans KR'; font-weight: bold;}
+.menu-go>p{font-size:14px;}
+
+.members-go{cursor:pointer}
+.members-go>h3{font-family: 'Noto Sans KR'; font-weight: bold;}
+.members-go>p{font-size:14px;}
+
+.content01{background: url(../images/img01.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.content01 h1{font-weight:bold; font-family: 'Noto Sans KR', sans-serif; padding-top: 140px;}
+.content01 h1:after{content:""; width: 100px; height: 3px; background: #fff; display: block; margin: 0 auto; margin-top: 20px;}
+.content01 h3{font-family: 'Noto Sans KR', sans-serif; padding-top: 75px;}
+
+.content02{margin-top: 100px;}
+
+/*content end*/
+
+footer{}
+.footer-sns-icon{margin: 0 auto; width: 211px;}
+.footer-sns-icon>img{float: left; margin: 15px; cursor:pointer;}
+
+/* footer end */
+
+.coffee-header{background: url(../images/bg05.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.coffee-header>div{padding: 300px 0;}
+.coffee-header>div>h1{padding-bottom: 100px; font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+.coffee-header>div>button{width: 180px; margin:	0 10px;}
+
+.coffee-content01{background: url(../images/img03.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.coffee-content01>div{padding: 150px 0;}
+.coffee-content01>div>h1{font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+
+.coffee-content02{background: url(../images/img04.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.coffee-content02>div{padding: 150px 0;}
+.coffee-content02>div>h1{font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+
+.coffee-content03{background: url(../images/img05.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.coffee-content03>div{padding: 150px 0;}
+.coffee-content03>div>h1{font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+
+/* coffee sub end*/
+
+.menu-header{background: url(../images/bg10.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.menu-header>div{padding: 200px 0;}
+.menu-header>div>h1{line-height: 200px; font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+
+.menu-content01{}
+.menu-content01>div{padding: 100px 0;}
+.menu-content01>div>h4{}
+.menu-content01>div>h4:after{content:""; width: 100px; height: 3px; background: #000; display: block; margin: 0 auto; margin-top: 20px;}
+.menu-slide{height: 350px;}
+
+.menu-content02{}
+.menu-check{padding: 20px 30px; margin-bottom: 30px; border: 1px solid #b4b4b4;}
+.form-check{margin-right: 40px;}
+.menu-list{}
+.menu-list-item{width: 277.5px; height: 324px; float: left; margin: 0 10px 10px 0;}
+.menu-list-item:nth-child(4){margin-right: 0;}
+.menu-list-item>a{padding: 20px 10px 10px 10px;}
+.menu-list-item>a>img{width: 257.5px;}
+.menu-list-item>a>p{padding-top: 10px;}
+
+/* menu end */
+
+.members-header{background: url(../images/bg07.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.members-header>div{padding: 300px 0;}
+.members-header>div>h1{padding-bottom: 100px; font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+.members-header>div>button{width: 180px; margin:	0 10px;}
+
+.members-content01{background: url(../images/bg06.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.members-content01>div{padding: 150px 0;}
+.members-content01>div>h1{font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+
+.members-content02{background: url(../images/img06.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.members-content02>div{padding: 150px 0;}
+.members-content02>div>h1{font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+
+.members-content03{background: url(../images/img07.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.members-content03>div{padding: 150px 0;}
+.members-content03>div>h1{font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+
+/* members sub end */
+
+.store-header{background: url(../images/bg08.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.store-header>div{padding: 300px 0;}
+.store-header>div>h1{padding-bottom: 100px; font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+.store-header>div>button{width: 180px; margin:	0 10px;}
+
+.store-content01{background: url(../images/bg09.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.store-content01>div{padding: 150px 0;}
+.store-content01>div>h1{font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+
+.store-content02{background: url(../images/img08.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.store-content02>div{padding: 150px 0;}
+.store-content02>div>h1{font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+
+/* store sub end */
+
+@media screen and (min-width:576px) and (max-width:991px){
+.top-nav{padding: 0;}
+.top-nav>ul>li>a{padding-right: 0;}
+}
+
+@media screen and (max-width:991px){
+.carousel-indicators{bottom: 0;}
+.main-contents{top: 0; margin-bottom: 100px;}
+.main-contents>div{max-width: 100% !important; height: 700px; margin: 0 auto;}
+.coffee-news{width: 70%;}
+.coffee-story{width: 30%; height: 500px !important;}
+.find-store{width: 100%; height: 200px !important; position: absolute; bottom: 0;}
+.find-store>form{bottom: 0; bottom: 25px;}
+.menu-go{width:35%; height: 200px !important; position: absolute; left: 0; bottom: 200px;}
+.members-go{width:35%; height: 200px !important; position: absolute; left: 35%; bottom: 200px; background: #6c757d !important;}
+}
+
+@media screen and (min-width:992px){
+.coffee-news{width: 600px;}
+.coffee-story{width: 360px;}
+.find-store{width: 360px;}
+.menu-go{width:600px;}
+.members-go{width:600px;}
+}
+
+@media screen and (min-width:1200px){
+.coffee-news{width: 435px;}
+.coffee-story{width: 235px;}
+.create-coffee{width: 235px;}
+.find-coffee{width: 235px;}
+.find-store{width: 435px;}
+.menu-go{width:705px;}
+.members-go{width:705px;}
+}

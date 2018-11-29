@@ -1,9 +1,39 @@
 <? include_once('head.php'); ?>
+
+    <header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background-image: url('./images/slide02.jpg')">
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('./images/slide01.jpg')">
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('./images/slide04.jpg')">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </header>
+
     <!-- Page Content -->
     <section class="main-contents">
       <div class="container after p-0 text-light">
          <div class="coffee-news bg-dark">
-            <h3 class="pt-3 pb-5">Coffee News
+            <h3 class="pt-3 pb-5">Qahwah News
                <span><a href="#">More +</a></span>
             </h3>
             <ul>
@@ -31,20 +61,20 @@
          </div>
          <div class="create-coffee d-none d-xl-block">
             <h3 class="pt-3 pb-4">내가 직접<br>만드는 커피</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>로스팅부터 추출 과정까지<br>커피가 만들어지는 과정을 한 눈에 볼 수 있어요.</p>
          </div>
-         <div class="find-coffee d-none d-xl-block">
+         <div class="find-coffee d-none d-xl-block bg-light text-dark">
             <h3 class="pt-3 pb-4">나와 어울리는<br>커피</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>나의 입맛에 맞는 커피를 찾고 할인 쿠폰을 받아보세요.</p>
          </div>
          <div class="coffee-story">
             <h3>커피<br>이야기</h3>
          </div>
-         <div class="find-store">
+         <div class="find-store bg-light text-dark">
             <h3 class="pt-3">매장찾기</h3>
             <form class="form-inline my-2 my-lg-0">
                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-               <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+               <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
             </form>
          </div>
          <div style="height: 150px;" class="menu-go">
@@ -67,7 +97,7 @@
     </section>
     <section class="text-center content02">
        <div class="container-fluid after p-0">
-          <h2>Coffee SNS</h2>
+          <h2>Qahwah SNS</h2>
           <!-- <div class="sns-slide-wrap">
              <div class="sns-slide">
                 <div class="after">
@@ -103,12 +133,6 @@
           </div> -->
        </div>
     </section>
+
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
-  </body>
-</html>
+<? include_once('footer.php'); ?>
