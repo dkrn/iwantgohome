@@ -33,6 +33,7 @@ img{display:block; width: auto;}
 .coffee-news>ul>li{padding: 3px 0;}
 .coffee-news>ul>li:after{content:""; display: block; clear: both;}
 .coffee-news>ul>li>a{display:inline-block; color:white !important;}
+.coffee-news>ul>li>a:hover{text-decoration:underline;}
 .coffee-news>ul>li>span{float: right; font-size:13px;}
 
 .coffee-story{background: url(../images/bg01.jpg) no-repeat top center; background-size:cover; position: relative; cursor:pointer;}
@@ -175,9 +176,16 @@ footer{}
 .nsbold{font-family: 'Noto Sans KR'; font-weight: bold;}
 .community-content01 .coffee-news{padding:15px 30px; height: 300px;}
 
-.community-content01 .event{height: 300px; padding: 15px; background: url(../images/img09.jpg) no-repeat center; background-size:cover; cursor:pointer;}
+.community-content01 .event_wrap{height: 300px; background: url(../images/img09.jpg) no-repeat center; background-size:cover;}
+.community-content01 .event{}
 /* .community-content01 .event:after{content:""; width: 100px; height: 1px; background: #fff; display: block; margin-top: 20px;} */
-.community-content01 .event>p{font-size:14px;}
+.community-content01 .event>p{font-size:14px; margin-bottom: 45px; cursor:pointer;}
+.community-content01 .event>ul{}
+.community-content01 .event>ul>li{padding: 3px 0;}
+.community-content01 .event>ul>li:after{content:""; display: block; clear: both;}
+.community-content01 .event>ul>li>a{display:inline-block; color:white !important;}
+.community-content01 .event>ul>li>a:hover{text-decoration:underline;}
+.community-content01 .event>ul>li>span{float: right; font-size:13px;}
 
 .community-content01 .prize{height: 300px; padding: 15px; background: #6c757d; cursor:pointer;}
 /* .community-content01 .prize:after{content:""; width: 100px; height: 1px; background: #fff; display: block; margin-top: 20px;} */
@@ -211,13 +219,17 @@ footer{}
 @media screen and (max-width:767px){
 .community-content01>.container{max-width:100% !important;}
 
-.event h4,.prize h4{padding-top: 10px;}
-.event h4,.event p,.prize h4,.prize p{padding-left: 20px;}
+.prize h4{padding-top: 20px;}
+.prize h4, .prize p{padding-left: 15px;}
 }
 
 @media screen and (min-width:576px) and (max-width:991px){
 .top-nav{padding: 0;}
 .top-nav>ul>li>a{padding-right: 0;}
+
+.event_wrap{padding: 15px 30px;}
+.prize h4{padding-top: 20px;}
+.prize h4, .prize p{padding-left: 15px;}
 
 .recommend02 p{font-size: 14px;}
 }
