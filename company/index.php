@@ -96,42 +96,47 @@
        </div>
     </section>
     <section class="text-center content02">
-       <div class="container-fluid after p-0">
-          <h2>Qahwah SNS</h2>
-          <!-- <div class="sns-slide-wrap">
-             <div class="sns-slide">
-                <div class="after">
-                   <div><img src="./images/img02.jpg" alt="" style="width:350px"></div>
-                </div>
-                <div class="after">
-                   <div><img src="./images/img02.jpg" alt="" style="width:350px"></div>
-                </div>
-                <div class="after">
-                   <div><img src="./images/img02.jpg" alt="" style="width:350px"></div>
-                </div>
-                <div class="after">
-                   <div><img src="./images/img02.jpg" alt="" style="width:350px"></div>
-                </div>
-                <div class="after">
-                   <div><img src="./images/img02.jpg" alt="" style="width:350px"></div>
-                </div>
-                <div class="after">
-                   <div><img src="./images/img02.jpg" alt="" style="width:350px"></div>
-                </div>
-                <div class="after">
-                   <div><img src="./images/img02.jpg" alt="" style="width:350px"></div>
-                </div>
-                <div class="after">
-                   <div><img src="./images/img02.jpg" alt="" style="width:350px"></div>
-                </div>
-                <div class="after">
-                   <div><img src="./images/img02.jpg" alt="" style="width:350px"></div>
-                </div>
-             </div>
-             <span class="prev"><img src="./images/prev.png" alt=""></span>
-             <span class="next"><img src="./images/next.png" alt=""></span>
-          </div> -->
-       </div>
+       <div class="container-fluid after p-0" style="overflow: hidden;">
+          <h2 class="pb-5">Qahwah SNS</h2>
+		  <!-- 임시 -->
+		    <div class="container sns-list">
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <a href="#" style="background:url(./images/bg01.jpg) no-repeat center"></a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <a href="#" style="background:url(./images/bg02.jpg) no-repeat center"></a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <a href="#" style="background:url(./images/bg03.jpg) no-repeat center"></a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <a href="#" style="background:url(./images/bg04.jpg) no-repeat center"></a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <a href="#" style="background:url(./images/bg05.jpg) no-repeat center"></a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <a href="#" style="background:url(./images/img05.jpg) no-repeat center"></a>
+            </div>
+          </div>
+        </div>
+			<div class="hidden">
+				<div class="menu-slide-wrap">
+					<div class="menu-slide after">
+						<div class="menu-slide01" style="margin-left: 0;"></div>
+						<div class="menu-slide02"></div>
+						<div class="menu-slide03"></div>
+						<div class="menu-slide04"></div>
+						<div class="menu-slide05" style="margin-right: 0;"></div>
+					</div>
+					<span class="prev"><img src="./images/prev.png" alt=""></span>
+					<span class="next"><img src="./images/next.png" alt=""></span>
+					<div class="clear" style="left: -380px;"></div>
+					<div class="clear" style="right: -380px;"></div>
+				</div>
+			</div>
+		</div>
     </section>
 
     <!-- Footer -->

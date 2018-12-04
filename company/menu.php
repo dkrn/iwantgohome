@@ -11,10 +11,51 @@
 		</div>
 	</section>
 	<section class="menu-content01 p-0 text-center">
-		<div class="container">
+		<div class="container recommend01">
 			<h4>추천 메뉴</h4>
-			<div class="menu-slide">
-				slide
+			<div class="hidden">
+				<div class="menu-slide-wrap">
+					<div class="menu-slide after">
+						<div class="menu-slide01">
+							<img src="./images/menu01.png" alt="menu">
+							<p>ICED 브라우니 쇼콜라</p>
+						</div>
+						<div class="menu-slide02">
+							<img src="./images/menu02.png" alt="menu">
+							<p>HOT 브라우니 쇼콜라</p>
+						</div>
+						<div class="menu-slide03">
+							<img src="./images/menu03.png" alt="menu">
+							<p>콜드브루 라떼</p>
+						</div>
+						<div class="menu-slide04">
+							<img src="./images/menu04.png" alt="menu">
+							<p>콜드브루 화이트 비엔나</p>
+						</div>
+						<div class="menu-slide05">
+							<img src="./images/menu08.png" alt="menu">
+							<p>에스프레소</p>
+						</div>
+					</div>
+					<span class="prev"><img src="./images/prev.png" alt=""></span>
+					<span class="next"><img src="./images/next.png" alt=""></span>
+				</div>
+			</div>
+			<div class="recommend02 text-center">
+				<div class="row">
+					<div class="col-sm-4 col-md-4">
+						<img src="./images/menu01.png" alt="menu">
+						<p>ICED 브라우니 쇼콜라</p>
+					</div>
+					<div class="col-sm-4 col-md-4">
+						<img src="./images/menu02.png" alt="menu">
+						<p>HOT 브라우니 쇼콜라</p>
+					</div>
+					<div class="col-sm-4 col-md-4">
+						<img src="./images/menu03.png" alt="menu">
+						<p>콜드브루 라떼</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -46,32 +87,83 @@
 					<label class="form-check-label" for="inlineCheckbox6">HOT</label>
 				</div>
 			</div>
-			<div class="menu-list text-center after">
-				<div class="menu-list-item bg-light">
-					<a href="#">
-						<img src="./images/menu01.png" alt="">
-						<p class="m-0">ICED 브라우니 쇼콜라</p>
-					</a>	
-				</div>
-				<div class="menu-list-item bg-light">
-					<a href="#">
-						<img src="./images/menu01.png" alt="">
-						<p class="m-0">ICED 브라우니 쇼콜라</p>
-					</a>	
-				</div>
-				<div class="menu-list-item bg-light">
-					<a href="#">
-						<img src="./images/menu01.png" alt="">
-						<p class="m-0">ICED 브라우니 쇼콜라</p>
-					</a>	
-				</div>
-				<div class="menu-list-item bg-light">
-					<a href="#">
-						<img src="./images/menu01.png" alt="">
-						<p class="m-0">ICED 브라우니 쇼콜라</p>
-					</a>	
-				</div>
-			</div>
+			<div class="container menu-list text-center">
+	          <div class="row">
+	            <div class="col-sm-6 col-md-6 col-lg-3">
+	              <a href="#">
+	              	<img src="./images/menu01.png" alt="menu" style="margin: 0 auto;">
+	              	<p class="m-0">ICED 브라우니 쇼콜라</p>
+	              </a>
+	          	</div>
+	          	<div class="col-sm-6 col-md-6 col-lg-3">
+	              <a href="#">
+	              	<img src="./images/menu02.png" alt="menu" style="margin: 0 auto;">
+	              	<p class="m-0">HOT 브라우니 쇼콜라</p>
+	              </a>
+	          	</div>
+	          	<div class="col-sm-6 col-md-6 col-lg-3">
+	              <a href="#">
+	              	<img src="./images/menu03.png" alt="menu" style="margin: 0 auto;">
+	              	<p class="m-0">콜드브루 라떼</p>
+	              </a>
+	          	</div>
+	          	<div class="col-sm-6 col-md-6 col-lg-3">
+	              <a href="#">
+	              	<img src="./images/menu04.png" alt="menu" style="margin: 0 auto;">
+	              	<p class="m-0">콜드브루 화이트 비엔나</p>
+	              </a>
+	          	</div>
+	          	<div class="col-sm-6 col-md-6 col-lg-3">
+	              <a href="#">
+	              	<img src="./images/menu08.png" alt="menu" style="margin: 0 auto;">
+	              	<p class="m-0">에스프레소</p>
+	              </a>
+	          	</div>
+	          	<div class="col-sm-6 col-md-6 col-lg-3">
+	              <a href="#">
+	              	<img src="./images/menu09.png" alt="menu" style="margin: 0 auto;">
+	              	<p class="m-0">에스프레소 마끼아또</p>
+	              </a>
+	          	</div>
+	          	<div class="col-sm-6 col-md-6 col-lg-3">
+	              <a href="#">
+	              	<img src="./images/menu10.png" alt="menu" style="margin: 0 auto;">
+	              	<p class="m-0">에스프레소 콘파냐</p>
+	              </a>
+	          	</div>
+	          	<div class="col-sm-6 col-md-6 col-lg-3">
+	              <a href="#">
+	              	<img src="./images/menu11.png" alt="menu" style="margin: 0 auto;">
+	              	<p class="m-0">ICED 데일 라떼</p>
+	              </a>
+	          	</div>
+	          	<div class="col-sm-6 col-md-6 col-lg-3">
+	              <a href="#">
+	              	<img src="./images/menu12.png" alt="menu" style="margin: 0 auto;">
+	              	<p class="m-0">HOT 데일 라떼</p>
+	              </a>
+	          	</div>
+	          	<div class="col-sm-6 col-md-6 col-lg-3">
+	              <a href="#">
+	              	<img src="./images/menu05.png" alt="menu" style="margin: 0 auto;">
+	              	<p class="m-0">레몬 스윗플럼</p>
+	              </a>
+	          	</div>
+	          	<div class="col-sm-6 col-md-6 col-lg-3">
+	              <a href="#">
+	              	<img src="./images/menu06.png" alt="menu" style="margin: 0 auto;">
+	              	<p class="m-0">자몽 네이블 오렌지</p>
+	              </a>
+	          	</div>
+	          	<div class="col-sm-6 col-md-6 col-lg-3">
+	              <a href="#">
+	              	<img src="./images/menu07.png" alt="menu" style="margin: 0 auto;">
+	              	<p class="m-0">유자 피나콜라다</p>
+	              </a>
+	          	</div>
+	          </div>
+	        </div>
+			<div><button class="menu-more btn-more btn btn-outline-dark mt-5 mb-5">More +</button></div>
 		</div>
 	</section>
 

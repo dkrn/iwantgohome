@@ -2,8 +2,7 @@
 
 *{margin: 0;padding: 0; box-sizing:border-box; font-family: 'Nanum Gothic', sans-serif; /*font-family: 'Noto Sans KR', sans-serif;*/}
 ul,li{list-style:none;}
-a{text-decoration:none; display: block;}
-a:link,a:hover,a:visited{color:black;}
+a,a:link,a:hover,a:visited{text-decoration:none; color:black; display: block;}
 img{display:block; width: auto;}
 .after:after{content:""; display: block; clear: both;}
 
@@ -18,6 +17,7 @@ img{display:block; width: auto;}
 .sns-icons>a>img:first-child{padding-left: 0;}
 
 .carousel-indicators{bottom: 100px;}
+.carousel-control-next-icon, .carousel-control-prev-icon{top: 50%; position: absolute; margin-top: -10px;}
 
 /*header end*/
 
@@ -60,12 +60,31 @@ img{display:block; width: auto;}
 .members-go>h3{font-family: 'Noto Sans KR'; font-weight: bold;}
 .members-go>p{font-size:14px;}
 
-.content01{background: url(../images/img01.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.content01{background: url(../images/img01.jpg) no-repeat top center; background-attachment:fixed; background-size:cover; margin-top: 100px;}
 .content01 h1{font-weight:bold; font-family: 'Noto Sans KR', sans-serif; padding-top: 140px;}
 .content01 h1:after{content:""; width: 100px; height: 3px; background: #fff; display: block; margin: 0 auto; margin-top: 20px;}
 .content01 h3{font-family: 'Noto Sans KR', sans-serif; padding-top: 75px;}
 
-.content02{margin-top: 100px;}
+.content02{margin: 200px 0;}
+.content02 h2{font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+.content02 h2:after{content:""; width: 80px; height: 1px; background: #000; display: block; margin: 0 auto; margin-top: 30px;}
+.content02 .sns-list{display: none;}
+.sns-list>div>div{padding: 15px;}
+.sns-list a{width: 100%; height: 300px; background-size:cover;}
+
+.hidden{width: 100%; overflow: hidden; margin: 0 auto;}
+.clear{width: 340px; height: 400px; position: absolute; background: rgba(255,255,255,0.5); top: 0;}
+.content02 .menu-slide-wrap{width: 1060px; height: 400px; position: relative; overflow: visible; margin: 0 auto;}
+.content02 .menu-slide{width: 1820px; height: 400px; padding: 50px 0; position: absolute; left: -380px;}
+.content02 .menu-slide>div{float: left; margin: 0 40px; width: 300px; height: 300px;}
+.content02 .menu-slide01{background: url(../images/img06.jpg) no-repeat center; background-size: cover;}
+.content02 .menu-slide02{background: url(../images/img02.jpg) no-repeat center; background-size: cover;}
+.content02 .menu-slide03{background: url(../images/img03.jpg) no-repeat center; background-size: cover;}
+.content02 .menu-slide04{background: url(../images/img04.jpg) no-repeat center; background-size: cover;}
+.content02 .menu-slide05{background: url(../images/img05.jpg) no-repeat center; background-size: cover;}
+.content02 .menu-slide-wrap .prev{position: absolute; top: 50%; left: -20px; margin-top: -35px;}
+.content02 .menu-slide-wrap .next{position: absolute; top: 50%; right: -20px; margin-top: -35px;}
+.prev,.next{cursor:pointer;}
 
 /*content end*/
 
@@ -98,21 +117,35 @@ footer{}
 .menu-header>div{padding: 200px 0;}
 .menu-header>div>h1{line-height: 200px; font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
 
-.menu-content01{}
+.menu-content01{overflow: hidden;}
 .menu-content01>div{padding: 100px 0;}
-.menu-content01>div>h4{}
-.menu-content01>div>h4:after{content:""; width: 100px; height: 3px; background: #000; display: block; margin: 0 auto; margin-top: 20px;}
-.menu-slide{height: 350px;}
+.menu-content01>div>h4{font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+.menu-content01>div>h4:after{content:""; width: 80px; height: 1px; background: #000; display: block; margin: 0 auto; margin-top: 20px;}
+.menu-slide-wrap{width: 1140px; height: 380px; position: relative; overflow: hidden;}
+.menu-slide{width: 1800px; height: 380px; padding: 50px 75px; position: absolute;}
+.menu-slide>div{float: left;}
+.menu-slide>div>img{width: 230px; height: 230px; margin: 0 50px;}
+.menu-slide>div>p{padding-top: 10px;}
+.menu-slide-wrap .prev{position: absolute; top: 50%; left: 0; margin-top: -35px;}
+.menu-slide-wrap .next{position: absolute; top: 50%; right: 0; margin-top: -35px;}
+
+.recommend02{display: none; padding: 50px 0;}
+.recommend02>div{}
+.recommend02>div>div{}
+.recommend02 img{width: 100%; margin: 0 auto;}
+.recommend02 a{}
+.recommend02 p{padding-top: 10px;}
 
 .menu-content02{}
 .menu-check{padding: 20px 30px; margin-bottom: 30px; border: 1px solid #b4b4b4;}
 .form-check{margin-right: 40px;}
-.menu-list{}
-.menu-list-item{width: 277.5px; height: 324px; float: left; margin: 0 10px 10px 0;}
-.menu-list-item:nth-child(4){margin-right: 0;}
-.menu-list-item>a{padding: 20px 10px 10px 10px;}
-.menu-list-item>a>img{width: 257.5px;}
-.menu-list-item>a>p{padding-top: 10px;}
+.menu-list{padding: 0 10px;}
+.menu-list>div{}
+.menu-list>div>div{padding: 5px;}
+.menu-list a{background: #f8f9fa; padding: 20px 10px;}
+.menu-list img{width: 90%; margin: 0 auto;}
+.menu-list p{padding-top: 10px;}
+.menu-more{border-radius:25px; padding:10px 40px; margin: 0 auto; display: block;}
 
 /* menu end */
 
@@ -135,6 +168,31 @@ footer{}
 
 /* members sub end */
 
+.community-header{background: url(../images/bg11.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
+.community-header>div{padding: 200px 0;}
+.community-header>div>h1{line-height: 200px; font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
+
+.nsbold{font-family: 'Noto Sans KR'; font-weight: bold;}
+.community-content01 .coffee-news{padding:15px 30px; height: 300px;}
+
+.community-content01 .event{height: 300px; padding: 15px; background: url(../images/img09.jpg) no-repeat center; background-size:cover; cursor:pointer;}
+/* .community-content01 .event:after{content:""; width: 100px; height: 1px; background: #fff; display: block; margin-top: 20px;} */
+.community-content01 .event>p{font-size:14px;}
+
+.community-content01 .prize{height: 300px; padding: 15px; background: #6c757d; cursor:pointer;}
+/* .community-content01 .prize:after{content:""; width: 100px; height: 1px; background: #fff; display: block; margin-top: 20px;} */
+.community-content01 .prize>p{font-size:14px;}
+
+.community-content01 .qa{height: 300px; padding: 15px; background: url(../images/img11.jpg) no-repeat center; background-size:cover; position: relative; cursor:pointer;}
+.community-content01 .qa>div{width: 120px; height: 120px; border: 1px solid #fff; position: absolute; left: 50%; top: 50%; margin-left: -60px; margin-top: -60px;}
+.community-content01 .qa>div>h3{line-height: 120px;}
+
+.community-content01 .inquiry{height: 300px; padding: 15px; cursor:pointer;}
+.community-content01 .inquiry:after{content:""; width: 80px; height: 1px; background: #000; display: block; margin: 20px auto;}
+.community-content01 .inquiry>h3{padding-top: 115px;}
+
+/* community sub end */
+
 .store-header{background: url(../images/bg08.jpg) no-repeat top center; background-attachment:fixed; background-size:cover;}
 .store-header>div{padding: 300px 0;}
 .store-header>div>h1{padding-bottom: 100px; font-weight:bold; font-family: 'Noto Sans KR', sans-serif;}
@@ -150,16 +208,26 @@ footer{}
 
 /* store sub end */
 
+@media screen and (max-width:767px){
+.community-content01>.container{max-width:100% !important;}
+
+.event h4,.prize h4{padding-top: 10px;}
+.event h4,.event p,.prize h4,.prize p{padding-left: 20px;}
+}
+
 @media screen and (min-width:576px) and (max-width:991px){
 .top-nav{padding: 0;}
 .top-nav>ul>li>a{padding-right: 0;}
+
+.recommend02 p{font-size: 14px;}
 }
 
 @media screen and (max-width:991px){
 .carousel-indicators{bottom: 0;}
+
 .main-contents{top: 0; margin-bottom: 100px;}
 .main-contents>div{max-width: 100% !important; height: 700px; margin: 0 auto;}
-.coffee-news{width: 70%;}
+.main-contents .coffee-news{width: 70% !important;}
 .coffee-story{width: 30%; height: 500px !important;}
 .find-store{width: 100%; height: 200px !important; position: absolute; bottom: 0;}
 .find-store>form{bottom: 0; bottom: 25px;}
@@ -173,6 +241,18 @@ footer{}
 .find-store{width: 360px;}
 .menu-go{width:600px;}
 .members-go{width:600px;}
+
+.recommend02 img{width: 80%; margin: 0 auto;}
+}
+
+@media screen and (max-width:1100px){
+.content02 .hidden{display: none;}
+.content02 .sns-list{display: block;}
+}
+
+@media screen and (max-width:1200px){
+.recommend01 .hidden{display: none;}
+.recommend02{display: block;}
 }
 
 @media screen and (min-width:1200px){
