@@ -3,25 +3,13 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta charset="UTF-8">
-	<title>바이미디어</title>
+	<title>하이미디어</title>
+	<script src="./js/jq.js"></script>
+	<script src="./js/jquery.bxslider.js"></script>
+	<script src="./js/script.js"></script>
+	<link rel="stylesheet" href="./css/jquery.bxslider.css">
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/style.css">
-	<script src="./js/jq.js"></script>
-	<script>
-		$(function(){
-			var lnbA = $('#lnb>ul>li>a')
-
-			$('.sub').hide();
-
-			$('#lnb>ul>li').hover(function(){
-				lnbA.eq($(this).index()).addClass('lnbhover');
-				$('.sub').eq($(this).index()).stop().slideDown();
-			},function(){
-				lnbA.eq($(this).index()).removeClass('lnbhover');
-				$('.sub').hide();
-			});
-		});
-	</script>
 </head>
 <body>
 	<header id="main_header">
@@ -107,9 +95,17 @@
 		</div>
 	</header>
 	<div id="visual_wrap">
-		<div class="visual">
-			<img src="./images/visual_img01.png" alt="visual_img01" class="vimg01">
-			<img src="./images/visual_img02.png" alt="visual_img02" class="vimg02">
+		<div class="wrap">
+			<div class="visual">
+				<img src="./images/visual_img01.png" alt="visual_img01" class="vimg01">
+				<img src="./images/visual_img02.png" alt="visual_img02" class="vimg02">
+			</div>
+		</div>
+		<div class="wrap">
+			<div class="visual">
+				<img src="./images/visual_img01.png" alt="visual_img01" class="vimg01">
+				<img src="./images/visual_img02.png" alt="visual_img02" class="vimg02">
+			</div>
 		</div>
 	</div>
 	<section id="main_banner">
