@@ -4,7 +4,8 @@
 
 
 
-	header{width: 100%; height: 80px; position: absolute; z-index:9999; min-width:1100px; background: rgba(255,255,255,0.2); transition-duration:0.5s;}
+	header{width: 100%; height: 80px; position: absolute; z-index:9999; min-width:1100px; 
+		background: rgba(255,255,255,0.2); transition-duration:0.5s;}
 	header.bg{background: #fff; box-shadow:0 1px 5px rgba(0,0,0,0.1); position:fixed;}
 	#header_wrap{width: 100%; height: 80px; position: absolute; overflow: hidden;}
 	#header_wrap.border:after{content:""; display: block; border-bottom: 1px solid #f0f0f1; margin-top: -3px;}
@@ -20,7 +21,8 @@
 	#menu>ul:after{content:""; display: block; clear: both;}
 	#menu>ul>li{float: left;}
 	#menu>ul>li>a{line-height: 80px; height: 80px; width: 150px; display: block; text-align: center;}
-	#menu>ul>li>a:after{content:""; display: block; width: 0; margin: 0 auto; margin-top: -3px; transition-duration:0.3s; border-bottom: 3px solid #ffcc33;}
+	#menu>ul>li>a:after{content:""; display: block; width: 0; margin: 0 auto; margin-top: -3px; 
+		transition-duration:0.3s; border-bottom: 3px solid #ffcc33;}
 	#menu>ul>li>a.active:after{content:""; width: 100%;}
 	#menu>ul>li>a>img{display:inline-block;}
 
@@ -46,7 +48,7 @@
 	#contents{width: 100%;}
 
 	#main_slide{min-width:1100px; max-width:100% height: 650px; position: relative; overflow: hidden;}
-	#main_slide>ul{width: 8400px; position: relative;}
+	#main_slide>ul{width: 10080px; position: relative;}
 	#main_slide>ul:after{content:""; display: block; clear: both;}
 	#main_slide>ul>li{width: 1680px; height: 650px; float: left;}
 
@@ -69,13 +71,15 @@
 
 	#content01{width: 1100px; margin: 0 auto; margin-top: 50px;}
 	#content01:after{content:""; display: block; clear: both;}
-	.content_btn_wrap{width: 256.25px; height: 200px; background: #f8f8f6; float: left; margin-right: 25px; border-bottom: 6px solid #ffcc33; transition-duration:0.5s; cursor:pointer;}
+	.content_btn_wrap{width: 256.25px; height: 200px; background: #f8f8f6; float: left; 
+		margin-right: 25px; border-bottom: 6px solid #ffcc33; transition-duration:0.5s; cursor:pointer;}
 	.content_btn_wrap:hover{border-bottom: 200px solid #ffcc33;}
 	.content_btn_wrap:last-child{margin: 0;}
 	.content_btn_wrap:first-child img{padding: 9px 0;}
 	.content_btn_wrap:nth-child(3) img{padding: 1.5px 0;}
 	.content_btn_wrap:last-child img{padding:7px 0;}
-	.content_btn{width: 244.25px; height: 188px; margin: 0 auto; text-align: center; background: #f8f8f6; margin-top: 6px; padding-top:35px;}
+	.content_btn{width: 244.25px; height: 188px; margin: 0 auto; text-align: center; 
+		background: #f8f8f6; margin-top: 6px; padding-top:35px;}
 	.content_btn>img{margin: 0 auto;}
 	.cb_t01{font-family: 'Noto Sans KR', sans-serif; font-weight:bold; padding-top: 10px;}
 	.cb_t02{font-family:'Renault Life'; color :#999;}
@@ -88,94 +92,106 @@
 	#FMcar_bottom{padding-top: 20px;}
 	#FMcar_bottom:after{content:""; display: block; clear: both;}
 	#FMcar_bottom>.FMcar:first-child{margin-left: 140.3px;}
-	.FMcar{height: 200px; float: left; padding-right: 22.6px; position: relative; overflow: hidden; cursor:pointer;}
+	.FMcar{height: 200px; float: left; padding-right: 22.6px; position: relative; 
+		overflow: hidden; cursor:pointer;}
 	.FMcar>h2{text-align: center; font-family:'Renault Life'; font-size:24px;}
 	.FMcar_img01{}
 	.FMcar_img02{position: absolute; top: 0; opacity:0;}
 	.FMcar>ul{border-top: 1px solid #f0f0f1; position: absolute; bottom: -15px; width: 100%; opacity:0;}
 	.FMcar>ul:after{content:""; display: block; clear: both;}
-	.FMcar>ul>li{float: left; width: 50%; height: 40px; line-height: 40px; text-align: center; font-size:13px; cursor:pointer;}
+	.FMcar>ul>li{float: left; width: 50%; height: 40px; line-height: 40px; text-align: center; 
+		font-size:13px; cursor:pointer;}
 	.FMcar>ul>li:hover{color:#ffcc33;}
 	
 	#content03{min-width:1100px; overflow: hidden; margin-top: 110px;}
-	#content03>img{width:100%; margin: 0 auto;}
+	#content03>img{width:100%; margin: 0 auto; cursor:pointer;}
 	#ebox_wrap{width: 1100px; margin: 0 auto; padding-top: 10px;}
 	#ebox_wrap:after{content:""; display: block; clear: both;}
 	.ebox{float: left; margin: 0 auto; cursor:pointer; color:#333;}
 	.ebox:first-child{padding-right: 20px;}
 	.ebox:hover p{color:#ffcc33;}
-	.ebox:hover img{transform:scale(1.05);}
+	.ebox:hover img{transform:scale(1.03);}
 	.ebox>div{width: 540px; overflow: hidden;}
 	.ebox>div>img{width: 100%; transition-duration:0.5s;}
 	.ebox>span{font-size:12px; color:#666; border-bottom: 1px solid #666;}
 	.ebox_t01{padding-top: 30px; font-size:18px;}
 	.ebox_t02{font-size:14px; padding: 5px 0 20px;}
 
-	#content04{width: 1100px; margin: 0 auto; margin-top: 150px; border-top: 3px solid #000;}
-	#sns{/*padding: 30px 0;*/ border-bottom: 1px solid #000;}
+	#content04{width: 1100px; margin: 0 auto; margin-top: 150px;}
+	#sns{/*padding: 30px 0;*/}
 	#sns:after{content:""; display: block; clear: both;}
-	#sns>div{float: left; width: 33.3%;} 
+	#sns>div{float: left; /*width: 33.3%;*/ width: 32%; margin-right: 1.95%;
+		background: #f8f8f6; position: relative;} 
 	.sns{padding: 30px 0; transition-duration:0.5s;}
-	.sns:hover{box-shadow:3px 3px 5px #ccc;}
-	.sns:hover div{border-right:none;} /*border 우째냐*/
-	.sns>div{width: 100%; height: 410px; position: relative; border-right: 1px solid #ccc;}
+	.sns:hover{box-shadow:3px 3px 5px #ccc; z-index:2;}
+	.sns>div{width: 100%; height: 410px; position: relative;}
 	.sns_title{margin-bottom: 20px;}
 	.sns_title>h2{font-family:'Renault Life'; font-size:28px; font-weight:normal; text-align: center;}
 	.sns_title>h2:after{content:""; display: block; clear: both;}
 	.sns_title>h2>span{cursor:pointer; position: relative;}
-	.sns_title>h2>span>img{display: inline-block; padding-right: 10px; margin-bottom:-5px;}
+	.sns_title>h2>span>img{display: inline-block; padding-right: 10px; margin-bottom:-5px; 
+		position: relative; z-index:2;}
+	.sns_title strong{position: relative; z-index:2; font-weight:normal;}
 	.sns_content{}
 	.sns_content>h4{margin-top: 25px; font-weight:normal; cursor:pointer;}
 	.sns_content>p{font-size:13px; color:#888; position: absolute; bottom: 0;}
 	.sns_img{max-width: 100%; height: 250px; cursor:pointer;}
 
-	.sns_title_bg{background: #ffcc33; width: 0; height: 30px; position: absolute; z-index:-1; left: 0;}
+	.sns_title_bg{background: #ffcc33; width: 0; height: 30px; position: absolute;
+		z-index:1; left: 0;}
 
 	#instagram{}
-	#instagram>div{padding: 0 25px 0 10px;}
+	#instagram>div{padding: 0 20px;}
 	#instagram .sns_img{background: url(../images/01.jpg) no-repeat center top; background-size:cover;}
 	#youtube{}
 	#youtube>div{margin: 0 auto; padding: 0 25px;}
 	#facebook{}
 	#facebook:after{content:""; display: block; clear: both;}
-	#facebook>div{float: right; padding: 0 10px 0 25px;}
+	#facebook>div{float: right; padding: 0 20px;}
 	#facebook .sns_img{background: url(../images/02.jpg) no-repeat center top; background-size:cover;}
 
-	#news{padding: 30px 10px; border-bottom: 3px solid #000;}
+	#news{margin-top: 50px; border-top: 3px solid #000; border-bottom: 3px solid #000;}
 	#news:after{content:""; display: block; clear: both;}
-	#news>div{width: 50%; border-right: 1px solid #ccc; float: left;}
-	#news>div:last-child{border:none;}
-	.news{}
-	.news_title{font-family: 'Noto Sans KR', sans-serif; cursor:pointer;}
-	.news_title:hover img{transform: rotate(90deg);}
+	#news>div{width: 50%; float: left;}
+	.news{padding: 30px 0 30px 10px; transition-duration:0.5s;}
+	.news:hover{box-shadow:3px 3px 5px #ccc;}
+	.news>div{padding-right: 30px; border-right: 1px solid #ccc;}
+	.news_title{font-family: 'Noto Sans KR', sans-serif;}
 	.news_title:after{content:""; display: block; clear: both;}
-	.news_title>h2{display:inline-block;}
+	.news_title>h2{display:inline-block; cursor:pointer; position: relative;}
 	.news_title>img{float: right; cursor:pointer; transition-duration:0.3s;}
+	.news_title>img:hover{transform: rotate(90deg);}
+	.news_title strong{position: relative; z-index:2; font-weight:normal;}
 	.news_content{padding-top: 20px; padding-left: 15px;}
 	.news_content>ul{}
 	.news_content>ul>li{font-size:14px; line-height: 30px; list-style:initial; cursor:pointer;}
-	.news_content>ul>li:hover{color:#ffcc33;}
+	.news_content>ul>li:hover{text-decoration:underline;}
 
-	#NEWS{padding-right: 20px;}
+	/*#NEWS{padding-right: 20px;}*/
 	#event{padding-left: 20px;}
 
 
 
 	footer{width: 100%; margin-top: 150px;}
 	#footer_border{border-bottom: 1px solid #f0f0f1; border-top: 1px solid #f0f0f1;}
-	#footer_top{width: 780px; margin: 0 auto; font-size:14px;}
+	#footer_top{width: 780px; margin: 0 auto; font-size:14px; position: relative;}
 	#footer_top strong{color: #363636;}
 	#footer_top>ul:after{content:""; display: block; clear: both;}
 	#footer_top>ul>li{float: left; padding-right:100px;}
 	#footer_top>ul>li:last-child{padding-right:0;}
 	#footer_top>ul>li>a{display: block; color: #696b71; padding: 20px;}
 	#footer_top>ul>li>a:first-child{padding-left:0;}
-	
+	#TOP{position: absolute; width: 80px; height: 40px; line-height: 40px; background: #f8f8f6; 
+		top:-40px; left: 50%; margin-left: -40px; text-align: center; border-radius: 8px 8px 0 0;
+		cursor:pointer; font-size:13px; color:#1e1a1b;}
+
 	.family_btn{position: relative;}
 	.family_btn>div{padding: 13px 0 13px 15px;}
-	.family_btn>div>button{display: block; padding: 7px 67px 7px 12px; background: #fff; border: 1px solid #f0f0f1; position: relative; color:#696b71; cursor:pointer; z-index:8;}
+	.family_btn>div>button{display: block; padding: 7px 67px 7px 12px; background: #fff;
+		border: 1px solid #f0f0f1; position: relative; color:#696b71; cursor:pointer; z-index:8;}
 	.family_btn>div>button>img{position: absolute; right: 7px; top: 50%; margin-top: -4px; transition-duration:0.3s;}
-	.family_menu{position: absolute; bottom:44px; border: 1px solid #f0f0f1; width: 147px; background: #fff; border-bottom:none; display: none;}
+	.family_menu{position: absolute; bottom:44px; border: 1px solid #f0f0f1; width: 147px;
+		background: #fff; border-bottom:none; display: none;}
 	.family_menu>li{padding: 10px 0 10px 10px; cursor:pointer; color:#696b71; font-size:13px;}
 	.family_menu>li:hover{background: #f0f0f1;}
 
