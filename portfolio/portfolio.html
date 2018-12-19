@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Cw</title>
+	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700,700i" rel="stylesheet">
+	<link rel="stylesheet" href="./css/fullpage.css">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/jq.js"></script>
+	<script src="./js/jq-ui.js"></script>
+	<script src="./js/fullpage.js"></script>
+	<script src="./js/script.js"></script>
+	<script>
+		$(function(){
+			$('#fullpage').fullpage({
+                navigation: true,
+                navigationTooltips: ['HOME', 'PORTFOLIO', 'CONTACT'],
+                showActiveTooltip: true
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="menu" class="sub-bg">
+		<div id="menu-list">
+			<h1><a href="index.html">HOME</a></h1>
+			<h1><a href="#" onclick="menuClose()">PORTFOLIO</a></h1>
+			<h1><a href="#">CONTACT</a></h1>
+		</div>
+	</div>
+	<nav>
+		<h1><a href="index.html"><img src="./images/logo.png" alt="Cw"></a></h1>
+		<div id="menu-open">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div id="menu-close">
+			<div></div>
+			<div></div>
+		</div>
+	</nav>
+	<div id="fullpage">
+		<div class="section pages" id="page01" data-anchor="1st">
+			<div class="main_cmt">
+				<p>CONTACT</p>
+			</div>
+		</div>
+		<div class="section pages" id="page02" data-anchor="2st">
+			<div class="main_cmt">
+				<p>CONTACT</p>
+			</div>
+		</div>
+		<div class="section pages" id="page03" data-anchor="3st">
+			<div class="main_cmt">
+				<p>CONTACT</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
