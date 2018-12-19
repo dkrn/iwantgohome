@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 *{font-family: 'Cabin', sans-serif;}
+::selection {color: black; background: white;}
 
 #menu{position: absolute; bottom: 0; top:0; right:0; width: 100%; margin: 0 auto;
 	height: 100%; background-size: 100% 100%; z-index:9998; display:none; opacity:0;}
@@ -8,9 +9,17 @@
 
 #menu-list{width: 100%; height: 100%; display:flex; align-content:center;
 	flex-direction:column; justify-content:center;}
-#menu-list h1{font-size:5em; text-align: center;}
-#menu-list h1 a{color:#fff;}
+#menu-list h1{font-size:5em; text-align: center; margin: 2.5px 0; opacity:1;}
+#menu-list span{width:100%; position: relative;}
+#menu-list span div{width:0; background: #fff; height:100%; position: absolute;
+	left: 0; top: 0; transition-duration:0.7s;}
+#menu-list span:hover div{width:100%;}
+#menu-list span:hover a{color:black;}
+#menu-list h1 span a{color:#fff; position: relative; z-index:3; transition-duration:0.7s;}
 
+#contact{}
+#contact h1{}
+#contact h1 span{color:#fff; background: #000;}
 
 nav{position: fixed; z-index:9999; padding: 20px 30px; width: 100%; height: 80px;
 	box-sizing:border-box;}
@@ -36,20 +45,34 @@ nav h1 a img{width: 35px; padding: 1px 0;}
 .section{text-align:center; overflow: hidden; background-size: cover;}
 
 #fp-nav ul li a span, .fp-slidesNav ul li a span{background: #fff !important;}
+#fp-nav ul li .fp-tooltip{font-family: 'Roboto', sans-serif;}
 
-#page00 .layer{position: absolute; bottom: 0; top:0; right:0; width: 100%; 
-	height: 100%; background-size: 100% 100%; background: rgba(0,0,0,0.5); z-index:3;}
 #page00 #myVideo{position: absolute; bottom: 0; top:0; right:0; width: 100%; 
 	height: 100%; background-size: 100% 100%; background-color: black; 
 	background-position: center center; background-size: contain; object-fit: cover;
 	z-index:3;}
-#page00 .layer>h1{position: absolute; z-index: 4; width: 100%; left: 0; top: 43%; 
+#page00 .layer01{position: absolute; bottom: 0; top:0; right:0; background: rgba(0,0,0,0.5);
+	width: 100%; height: 100%; background-size: 100% 100%; z-index:3;}
+#page00 .layer01>h1{position: absolute; z-index: 4; width: 100%; left: 0; top: 43%;
 	color:white; font-size:5em; font-style:italic;}
-#page00 .layer>h1>span{background: #000;}
+#page00 .layer01>h1>span{background: #000;}
 
 
-#page01{background: -webkit-gradient(linear, top left, bottom left, from(#4bbfc3), to(#7baabe));
-	background: -webkit-linear-gradient(#4BBFC3, #7BAABE); background: linear-gradient(#4BBFC3,#7BAABE);}
+#page01{background: #3f1114;}
+#page01 .main_cmt{position: relative; width: 100%; height: 100%; opacity:0; transform:translateX(-100px);}
+
+#page01 .main_cmt img{position: absolute;}
+#page01 .main_cmt img:nth-child(1){width: 500px; left: 50%; margin-left: -575px; top: 75px;}
+#page01 .main_cmt img:nth-child(2){width: 1000px; right: 50%; margin-right: -625px; top: 325px;}
+
+#page01 .main_cmt .text01{position: absolute; left: 50%; margin-left: -450px; top: 220px;}
+#page01 .main_cmt .text01 h1,#page01 .main_cmt .text01 p{text-align: center; color:#fff;}
+#page01 .main_cmt .text01 h1{}
+#page01 .main_cmt .text01 p a{color:white; font-family: 'Roboto', sans-serif;}
+
+#page01 .main_cmt .text02{position: absolute; bottom: 20px; right: 30px;}
+#page01 .main_cmt .text02 p{color:white; text-align:right; font-family: 'Roboto', sans-serif;
+	font-size:14px;}
 
 #page02{/*background: url(./images/bg1.jpg) no-repeat center; background-attachment: fixed; width: 100%;*/
 	background: -webkit-gradient(linear, top left, bottom left, from(#7baabe), to(#969ac6));

@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Cw</title>
 	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="./css/fullpage.css">
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/style.css">
@@ -16,8 +17,22 @@
 		$(function(){
 			$('#fullpage').fullpage({
                 navigation: true,
-                navigationTooltips: ['HOME', 'PORTFOLIO', 'CONTACT'],
-                showActiveTooltip: true
+                navigationTooltips: ['INCREDIBLES 2', 'PORTFOLIO', 'CONTACT'],
+                showActiveTooltip: true,
+                afterLoad:function(origin,destination,direction){
+					if(destination.index == 0){
+						$('#page01').find('.main_cmt').css({
+							opacity:1,
+							'transition-duration':'1.5s',
+							transform:'translateX(0)'
+						});
+		         }else if(origin && origin.index == 0){
+		         	$('#page01').find('.main_cmt').removeAttr('style').css({
+		         		opacity:0,
+		         		transform:'translateX(-100px)'
+		         	});
+		         }
+				}
 			});
 		});
 	</script>
@@ -25,9 +40,28 @@
 <body>
 	<div id="menu" class="sub-bg">
 		<div id="menu-list">
-			<h1><a href="index.html">HOME</a></h1>
-			<h1><a href="#" onclick="menuClose()">PORTFOLIO</a></h1>
-			<h1><a href="#">CONTACT</a></h1>
+			<h1>
+				<span>
+					<div></div>
+					<a href="index.html">HOME</a>
+				</span>
+			</h1>
+			<h1>
+				<span>
+					<div></div>
+					<a href="#" onclick="menuClose()">PORTFOLIO</a>
+				</span>
+			</h1>
+			<h1>
+				<span>
+					<div></div>
+					<a href="#" onclick="contact()">CONTACT</a>
+				</span>
+			</h1>
+			<div id="contact" style="display:none;">
+				<h1><span>E. castlewater08@naver.com</span></h1>
+				<h1><span>T. 010-8081-7176</span></h1>
+			</div>
 		</div>
 	</div>
 	<nav>
@@ -45,7 +79,15 @@
 	<div id="fullpage">
 		<div class="section pages" id="page01" data-anchor="1st">
 			<div class="main_cmt">
-				<p>CONTACT</p>
+				<img src="./images/02.png" alt="INCREDIBLES 2">
+				<img src="./images/01.png" alt="INCREDIBLES 2">
+				<div class="text01">
+					<h1>Team Project</h1>
+					<p><a href="http://dkrnss.dothome.co.kr/main/" target="_blank">http://dkrnss.dothome.co.kr/main/</a></p>
+				</div>
+				<div class="text02">
+					<p>Gnuboard5<br>디자인 및 구현</p>
+				</div>
 			</div>
 		</div>
 		<div class="section pages" id="page02" data-anchor="2st">

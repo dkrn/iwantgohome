@@ -23,9 +23,28 @@
 <body>
 	<div id="menu">
 		<div id="menu-list">
-			<h1><a href="#" onclick="menuClose()">HOME</a></h1>
-			<h1><a href="portfolio.html">PORTFOLIO</a></h1>
-			<h1><a href="#">CONTACT</a></h1>
+			<h1>
+				<span>
+					<div></div>
+					<a href="#" onclick="menuClose()">HOME</a>
+				</span>
+			</h1>
+			<h1>
+				<span>
+					<div></div>
+					<a href="portfolio.html">PORTFOLIO</a>
+				</span>
+			</h1>
+			<h1>
+				<span>
+					<div></div>
+					<a href="#" onclick="contact()">CONTACT</a>
+				</span>
+			</h1>
+			<div id="contact" style="display:none;">
+				<h1><span>E. castlewater08@naver.com</span></h1>
+				<h1><span>T. 010-8081-7176</span></h1>
+			</div>
 		</div>
 	</div>
 	<nav>
@@ -45,7 +64,7 @@
 			<video id="myVideo" loop muted data-autoplay>
 				<source src="./images/sea_low.mp4" type="video/mp4">
 			</video>
-			<div class="layer">
+			<div class="layer01">
 				<h1><span>Lorem ipsum.</span></h1>
 			</div>
 		</div>
