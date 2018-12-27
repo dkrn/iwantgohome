@@ -2,23 +2,26 @@
 
 *{font-family: 'Cabin', sans-serif;}
 ::selection {color: black; background: white;}
+.nanum-gothic{font-family: 'Nanum Gothic', sans-serif;}
 
+.sub-bg{background: rgba(0,0,0,0.8);}
+
+.bg-line span{width:100%; position: relative;}
+.bg-line span div{width:0; background: #fff; height:100%; position: absolute;
+	left: 0; top: 0; transition-duration:0.7s;}
+.bg-line span:hover div{width:100%;}
+.bg-line span:hover a{color:black;}
+.bg-line span a{color:#fff; position: relative; z-index:3; transition-duration:0.7s;}
+
+
+
+/*---------------menu---------------*/
 #menu{position: absolute; bottom: 0; top:0; right:0; width: 100%; margin: 0 auto;
 	height: 100%; background-size: 100% 100%; z-index:9998; display:none; opacity:0;}
-.sub-bg{background: rgba(0,0,0,0.6);}
-
 #menu-list{width: 100%; height: 100%; display:flex; align-content:center;
 	flex-direction:column; justify-content:center;}
 #menu-list h1{font-size:5em; text-align: center; margin: 2.5px 0; opacity:1;}
-#menu-list span{width:100%; position: relative;}
-#menu-list span div{width:0; background: #fff; height:100%; position: absolute;
-	left: 0; top: 0; transition-duration:0.7s;}
-#menu-list span:hover div{width:100%;}
-#menu-list span:hover a{color:black;}
-#menu-list h1 span a{color:#fff; position: relative; z-index:3; transition-duration:0.7s;}
 
-#contact{}
-#contact h1{}
 #contact h1 span{color:#fff; background: #000;}
 
 nav{position: fixed; z-index:9999; padding: 20px 30px; width: 100%; height: 80px;
@@ -41,12 +44,7 @@ nav h1 a img{width: 35px; padding: 1px 0;}
 
 
 
-#fullpage{width: 100%; height: 100%; position: relative;}
-.section{text-align:center; overflow: hidden; background-size: cover;}
-
-#fp-nav ul li a span, .fp-slidesNav ul li a span{background: #fff !important;}
-#fp-nav ul li .fp-tooltip{font-family: 'Roboto', sans-serif;}
-
+/*---------------main---------------*/
 #page00 #myVideo{position: absolute; bottom: 0; top:0; right:0; width: 100%; 
 	height: 100%; background-size: 100% 100%; background-color: black; 
 	background-position: center center; background-size: contain; object-fit: cover;
@@ -58,25 +56,122 @@ nav h1 a img{width: 35px; padding: 1px 0;}
 #page00 .layer01>h1>span{background: #000;}
 
 
+
+/*---------------sub---------------*/
+#fullpage{width: 100%; height: 100%; position: relative;}
+.section{text-align:center; overflow: hidden; background-size: cover;}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span{background: #fff;}
+#fp-nav ul li .fp-tooltip{font-family: 'Nanum Gothic', sans-serif;}
+
+
+.main_cmt{position: relative; width: 100%; height: 100%; opacity:0; transform:translateX(-100px);}
+
+.center{width:100%; height:100%; display:flex; align-content:center;
+	justify-content: center; align-items:center;}
+.center>div{width: 1200px;}
+.center>div:after{content:""; display: block; clear: both;}
+.logo:after{content:""; display: block; clear: both;}
+
+.text01 a{font-size:14px;}
+.text02{position: absolute; bottom: 20px; right: 30px;}
+.text02 p{text-align: right; font-size:14px;}
+
+.btn{width: 140px; height: 50px; border-radius: 25px; line-height: 50px;
+	font-family: 'Nanum Gothic', sans-serif; display: block;}
+.bt-line{position: relative;}
+.bt-line span:after{content:""; display: block; width:0; height: 1px; background: #fff;
+	position: absolute; left: 0; transition-duration:0.5s;}
+.bt-line span.add:after{width: 100%;}
+
+
+
+/*---------------incredibles_2---------------*/
 #page01{background: #3f1114;}
-#page01 .main_cmt{position: relative; width: 100%; height: 100%; opacity:0; transform:translateX(-100px);}
 
-#page01 .main_cmt img{position: absolute;}
-#page01 .main_cmt img:nth-child(1){width: 500px; left: 50%; margin-left: -575px; top: 75px;}
-#page01 .main_cmt img:nth-child(2){width: 1000px; right: 50%; margin-right: -625px; top: 325px;}
+#page01 .logo{width:500px;}
+#page01 .logo>img{width:500px;}
+#page01 .text01 h1{color:#fff; margin-bottom: 1px;}
+#page01 .text01 .btn{border: 1px solid #fff; color:#fff;
+	margin: 0 auto; transition-duration:0.5s; margin-top: 10px;}
+#page01 .text01 .btn:hover{background: #fff; color:#000;}
 
-#page01 .main_cmt .text01{position: absolute; left: 50%; margin-left: -450px; top: 220px;}
-#page01 .main_cmt .text01 h1,#page01 .main_cmt .text01 p{text-align: center; color:#fff;}
-#page01 .main_cmt .text01 h1{}
-#page01 .main_cmt .text01 p a{color:white; font-family: 'Roboto', sans-serif;}
+#page01 .bg-line span div{background:#fff}
 
-#page01 .main_cmt .text02{position: absolute; bottom: 20px; right: 30px;}
-#page01 .main_cmt .text02 p{color:white; text-align:right; font-family: 'Roboto', sans-serif;
-	font-size:14px;}
+#page01 .center>div>img{width: 1000px; float: right; margin-top: 100px;}
+#page01 .text02 p{color:#fff;}
 
-#page02{/*background: url(./images/bg1.jpg) no-repeat center; background-attachment: fixed; width: 100%;*/
-	background: -webkit-gradient(linear, top left, bottom left, from(#7baabe), to(#969ac6));
-	background: -webkit-linear-gradient(#7BAABE, #969AC6); background: linear-gradient(#7BAABE,#969AC6);}
 
-#page03{background: -webkit-gradient(linear, top left, bottom left, from(#969ac6), to(#636F8F));
-	background: -webkit-linear-gradient(#969AC6, #636F8F); background: linear-gradient(#969AC6,#636F8F);}
+/*---------------renaultsamsung---------------*/
+#page02{background: #ffcc33;}
+
+#page02 .logo>img{margin: 0 auto;}
+#page02 .text01>img{width: 450px; margin: 15px auto;}
+
+#page02 .bg-line span div{background:#000;}
+#page02 .bg-line span a{color:#000;}
+#page02 .bg-line span a:hover{color:#fff;}
+
+#page02 .center>div>img{width: 1000px; margin: 0 auto; margin-top: 50px;}
+
+
+/*---------------qahwah---------------*/
+#page03{background: url(../images/bg.jpg) no-repeat center; background-size:cover;}
+
+#page03 .text01{float: right; margin-right: 25px; margin-bottom: -100px;}
+#page03 .text01>h1:nth-child(1){font-size:5em;}
+#page03 .text01>h1:nth-child(2){font-size:3.4em; font-weight:normal; position: relative; top: -15px;}
+
+#page03 .bg-line span div{background:#343a40;}
+#page03 .bg-line span a{color:#000;}
+#page03 .bg-line span a:hover{color:#fff;}
+
+#page03	.center>div>img{width: 1000px; margin-left: -125px;}
+#page03 .text02 span{font-size:12px;}
+
+
+/*---------------web_design---------------*/
+#page04{background: #00163b;}
+#page04 .center{padding: 100px 0;}
+#page04 .center>div>div{padding: 75px 0; margin: 0 auto; position: relative;}
+#page04 .center>div>div:nth-child(1){padding: 0;}
+#page04 .center>div>div:after{content:""; display: block; clear: both;}
+
+#page04 .text01:after{content:""; display: block; clear: both;}
+#page04 .text01 img{margin: 0 auto;}
+#page04 .text01 p{color:#fff; padding-top: 10px;}
+#page04 .text01 a{color:#fff;}
+#page04 .text01 a:hover{color:#00163b;}
+
+
+/*main*/
+#page04-main-wrap{width: 100%; height: 100%; padding-bottom: 150px !important;}
+#page04-main-wrap>img{margin: 0 auto; margin-right: 75px; margin-top: 100px;}
+
+
+/*sub01*/
+#page04-sub01{}
+
+#page04-sub01>img:nth-child(1){width: 500px; float: left; margin-left: 50px;}
+
+#page04-sub01 .text01{float: right; margin-right: 50px;}
+#page04-sub01 .text01 img{width: 300px; padding: 50px 0 15px; float: right;}
+/*#page04-sub01>img:nth-child(2){width: 200px; position: absolute; bottom: 100px; right: 0;}*/
+
+
+/*sub02*/
+#page04-sub02{}
+
+#page04-sub02>img:nth-child(1){width: 700px; float: right; margin-right: -100px;}
+
+#page04-sub02 .text01{float: left;}
+#page04-sub02 .text01 img{width: 450px; padding: 30px 0 15px; float: left;}
+
+
+/*sub03*/
+#page04-sub03{padding-bottom: 0 !important;}
+
+#page04-sub03>img:nth-child(1){width: 500px; float: left; margin-left: 50px;}
+
+#page04-sub03 .text01{float: right; margin-right: 50px;}
+#page04-sub03 .text01 img{width: 450px; padding: 30px 0 5px; float: right;}

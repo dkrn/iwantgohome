@@ -5,41 +5,19 @@
 	<meta charset="UTF-8">
 	<title>Cw</title>
 	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700,700i" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
 	<link rel="stylesheet" href="./css/fullpage.css">
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/style.css">
 	<script src="./js/jq.js"></script>
 	<script src="./js/jq-ui.js"></script>
+	<script src="./js/scrolloverflow.min.js"></script>
 	<script src="./js/fullpage.js"></script>
 	<script src="./js/script.js"></script>
-	<script>
-		$(function(){
-			$('#fullpage').fullpage({
-                navigation: true,
-                navigationTooltips: ['INCREDIBLES 2', 'PORTFOLIO', 'CONTACT'],
-                showActiveTooltip: true,
-                afterLoad:function(origin,destination,direction){
-					if(destination.index == 0){
-						$('#page01').find('.main_cmt').css({
-							opacity:1,
-							'transition-duration':'1.5s',
-							transform:'translateX(0)'
-						});
-		         }else if(origin && origin.index == 0){
-		         	$('#page01').find('.main_cmt').removeAttr('style').css({
-		         		opacity:0,
-		         		transform:'translateX(-100px)'
-		         	});
-		         }
-				}
-			});
-		});
-	</script>
 </head>
 <body>
 	<div id="menu" class="sub-bg">
-		<div id="menu-list">
+		<div id="menu-list" class="bg-line">
 			<h1>
 				<span>
 					<div></div>
@@ -59,7 +37,7 @@
 				</span>
 			</h1>
 			<div id="contact" style="display:none;">
-				<h1><span>E. castlewater08@naver.com</span></h1>
+				<h1><span>E. castlewater08<strong class="nanum-gothic">@</strong>naver.com</span></h1>
 				<h1><span>T. 010-8081-7176</span></h1>
 			</div>
 		</div>
@@ -76,28 +54,133 @@
 			<div></div>
 		</div>
 	</nav>
-	<div id="fullpage">
+	<div id="fullpage-sub">
 		<div class="section pages" id="page01" data-anchor="1st">
 			<div class="main_cmt">
-				<img src="./images/02.png" alt="INCREDIBLES 2">
-				<img src="./images/01.png" alt="INCREDIBLES 2">
-				<div class="text01">
-					<h1>Team Project</h1>
-					<p><a href="http://dkrnss.dothome.co.kr/main/" target="_blank">http://dkrnss.dothome.co.kr/main/</a></p>
-				</div>
-				<div class="text02">
-					<p>Gnuboard5<br>디자인 및 구현</p>
+				<div class="center">
+					<div>
+						<div class="logo">
+							<img src="./images/02.png" alt="INCREDIBLES 2 logo">
+							<div class="text01 bg-line">
+								<h1>Team Project</h1>
+								<!-- <p>
+									<a href="http://dkrnss.dothome.co.kr/main/" target="_blank" class="nanum-gothic bt-line">http://dkrnss.dothome.co.kr/main/
+										<span></span>
+									</a>
+								</p> -->
+								<span>
+									<div></div>
+									<a href="http://dkrnss.dothome.co.kr/main/" target="_blank" class="nanum-gothic bt-line">http://dkrnss.dothome.co.kr/main/</a>
+								</span>
+								<!-- <a href="http://dkrnss.dothome.co.kr/main/" target="_blank" class="btn">View site</a> -->
+							</div>
+						</div>
+						<img src="./images/01.png" alt="INCREDIBLES 2">
+						<div class="text02">
+							<p class="nanum-gothic">Gnuboard5<br>디자인 및 구현</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="section pages" id="page02" data-anchor="2st">
+		<div class="section pages" id="page02" data-anchor="2nd">
 			<div class="main_cmt">
-				<p>CONTACT</p>
+				<div class="center">
+					<div>
+						<div class="logo">
+							<img src="./images/04.png" alt="RenaultsamsungMotors logo">
+							<div class="text01 bg-line">
+								<img src="./images/05.png" alt="RenaultsamsungMotors">
+								<span>
+									<div></div>
+									<a href="https://dkrn.github.io/iwantgohome/renaultsamsungmotors/" target="_blank" class="nanum-gothic bt-line">https://dkrn.github.io/iwantgohome/renaultsamsungmotors/</a>
+								</span>
+							</div>
+						</div>
+						<img src="./images/03.png" alt="INCREDIBLES 2">
+						<div class="text02">
+							<p class="nanum-gothic">Github<br>디자인 구성 요소 설계 및 구현</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="section pages" id="page03" data-anchor="3st">
+		<div class="section pages" id="page03" data-anchor="3rd">
 			<div class="main_cmt">
-				<p>CONTACT</p>
+				<div class="center">
+					<div>
+						<div class="logo">
+							<div class="text01 bg-line">
+								<h1>Qahwah</h1>
+								<h1>Web Design</h1>
+								<span>
+									<div></div>
+									<a href="http://dkrnsss.dothome.co.kr/" target="_blank" class="nanum-gothic bt-line">http://dkrnsss.dothome.co.kr/</a>
+								</span>
+							</div>
+						</div>
+						<img src="./images/06.png" alt="Qahwah">
+						<div class="text02">
+							<p class="nanum-gothic">Bootstrap<span> | PC tablet moblie</span><br>디자인 구성 요소 설계 및 구현</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section pages" id="page04" data-anchor="4st">
+			<div class="main_cmt">
+				<div class="center">
+					<div>
+						<div id="page04-main-wrap">
+							<div class="logo">
+								<div class="text01 bg-line">
+									<img src="./images/08.png" alt="Web Design logo">
+									<p class="nanum-gothic">Github<span style="font-size:13px;">　|　</span>디자인 및 구현</p>
+								</div>
+							</div>
+							<img src="./images/07.png" alt="Web Design">
+						</div>
+						<div id="page04-sub01">
+							<img src="./images/09.png" alt="Himedia">
+							<!-- <img src="./images/11.png" alt="background logo"> -->
+							<div class="text01 bg-line">
+								<img src="./images/10.png" alt="Himedia logo">
+								<p></p>
+								<span>
+									<div></div>
+									<a href="https://dkrn.github.io/iwantgohome/himedia/" target="_blank" class="nanum-gothic bt-line">https://dkrn.github.io/iwantgohome/himedia/</a>
+								</span>
+							</div>
+						</div>
+						<div id="page04-sub02">
+							<img src="./images/12.png" alt="Himedia Travel">
+							<div class="text01 bg-line">
+								<img src="./images/13.png" alt="Himedia Travel logo">
+								<p></p>
+								<span>
+									<div></div>
+									<a href="https://dkrn.github.io/iwantgohome/himedia_travel-main/" target="_blank" class="nanum-gothic bt-line">Main page</a>
+								</span>
+								<span style="color:#fff; font-size:13px;">　|　</span>
+								<span>
+									<div></div>
+									<a href="https://dkrn.github.io/iwantgohome/himedia_travel-sub/" target="_blank" class="nanum-gothic bt-line">Sub page</a>
+								</span>
+							</div>
+						</div>
+						<div id="page04-sub03">
+							<img src="./images/14.png" alt="Korea University">
+							<div class="text01 bg-line">
+								<img src="./images/15.png" alt="Himedia logo">
+								<p></p>
+								<span>
+									<div></div>
+									<a href="https://dkrn.github.io/iwantgohome/koreauniversity/" target="_blank" class="nanum-gothic bt-line">https://dkrn.github.io/iwantgohome/koreauniversity/</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
